@@ -1,51 +1,62 @@
 /**
- * Central site configuration for the Nigerian Mission website template.
- *
- * Every Mission-specific value is a [Placeholder]. When a Mission adopts
- * this template, this is the single file to update (or to map to CMS
- * global settings) — no page content needs to be edited for the basics.
+ * Central site configuration — Ministry of Foreign Affairs, Federal Republic of Nigeria.
+ * Update this file when organisational details change; no page content needs editing.
  */
 
 export const site = {
-  /** Brand name of the Mission as displayed across the website. */
-  missionName: "Embassy of Nigeria in Havana",
-  missionShortName: "Nigerian Embassy, Havana",
-  hostCountry: "Cuba",
-  city: "Havana",
-  address: "5ta Avenida No. 1402, Miramar, Playa",
-  /** Sample values — replace with the Embassy's official details before launch. */
-  email: "info.havana@foreignaffairs.gov.ng",
-  phones: ["+53 7 204 1234", "+53 7 204 5678"],
-  emergencyPhone: "+53 5 280 9012",
-  headOfMission: "H.E. (Dr) Adaeze N. Okonkwo",
-  headOfMissionTitle:
-    "Ambassador Extraordinary and Plenipotentiary of the Federal Republic of Nigeria to the Republic of Cuba",
-  /** Sample portrait — replace with the official photograph before launch. */
-  headOfMissionPortrait: {
-    src: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&crop=faces&w=600&h=800&q=75",
-    alt: "Official portrait of H.E. (Dr) Adaeze N. Okonkwo, Ambassador of the Federal Republic of Nigeria to the Republic of Cuba, in traditional ankara attire",
-    credit: "Sample official portrait — replace with the Embassy's photograph",
+  missionName: "Ministry of Foreign Affairs",
+  missionShortName: "MFA Nigeria",
+  hostCountry: "Nigeria",
+  city: "Abuja",
+  address: "Maputo Street, Zone 3, Wuse, Abuja, FCT",
+  email: "info@foreignaffairs.gov.ng",
+  phones: ["+234 9 523 5000", "+234 9 523 5001"],
+  emergencyPhone: "+234 803 000 0001",
+
+  ministers: {
+    foreign: {
+      name: "Ambassador Bianca Odumegwu-Ojukwu",
+      shortName: "Amb. Bianca Odumegwu-Ojukwu",
+      title: "Honourable Minister of Foreign Affairs",
+      swornIn: "April 29, 2026",
+      portrait: {
+        src: "/images/minister.png",
+        alt: "Official portrait of Ambassador Bianca Odumegwu-Ojukwu, Honourable Minister of Foreign Affairs",
+      },
+    },
+    state: {
+      name: "Ambassador Bianca Odumegwu-Ojukwu",
+      shortName: "Amb. Bianca Odumegwu-Ojukwu",
+      title: "Honourable Minister",
+      swornIn: "November 4, 2024",
+      portrait: {
+        src: "/images/minister-state.png",
+        alt: "Official portrait of the Honourable Minister",
+      },
+    },
   },
+
   officeHours: [
-    { days: "Monday – Friday", hours: "9:00 am – 4:00 pm" },
-    { days: "Consular submissions", hours: "9:30 am – 12:30 pm" },
-    { days: "Collections", hours: "2:00 pm – 4:00 pm" },
+    { days: "Monday – Friday", hours: "8:00 am – 4:00 pm" },
+    { days: "Consular desk", hours: "9:00 am – 1:00 pm" },
   ],
-  /** Placeholder — replace with the Embassy's production domain. */
-  url: "https://nigeriahavana.gov.ng",
+
+  url: "https://foreignaffairs.gov.ng",
+
   social: [
-    { label: "Facebook", href: "https://facebook.com/NigeriaEmbassyHavana", icon: "facebook" },
-    { label: "X (Twitter)", href: "https://x.com/NigeriaHavana", icon: "x" },
-    { label: "Instagram", href: "https://instagram.com/nigeriaembassyhavana", icon: "instagram" },
+    { label: "Facebook", href: "https://facebook.com/NigeriaMFA", icon: "facebook" },
+    { label: "X (Twitter)", href: "https://x.com/NigeriaMFA", icon: "x" },
+    { label: "Instagram", href: "https://instagram.com/nigeriamfa", icon: "instagram" },
+    { label: "YouTube", href: "https://youtube.com/@NigeriaMFA", icon: "youtube" },
   ],
 };
 
 export const govLinks = [
   { label: "State House — The Presidency", href: "https://statehouse.gov.ng" },
-  { label: "Ministry of Foreign Affairs", href: "https://foreignaffairs.gov.ng" },
   { label: "Nigeria Immigration Service", href: "https://immigration.gov.ng" },
   { label: "NiDCOM — Diaspora Commission", href: "https://nidcom.gov.ng" },
   { label: "NIPC — Investment Promotion", href: "https://nipc.gov.ng" },
+  { label: "Nigeria Customs Service", href: "https://customs.gov.ng" },
 ];
 
 export interface NavChild {
@@ -62,38 +73,63 @@ export interface NavItem {
 export const navigation: NavItem[] = [
   { label: "Home", href: "/" },
   {
-    label: "About the Mission",
+    label: "About",
     href: "/about",
     children: [
-      { label: "Overview", href: "/about#overview" },
-      { label: "Head of Mission", href: "/about#head-of-mission" },
-      { label: "Mission History", href: "/about#history" },
-      { label: "Departments", href: "/about#departments" },
-      { label: "Diplomatic Mandate", href: "/about#mandate" },
+      { label: "About the Ministry", href: "/about" },
+      { label: "Honourable Minister", href: "/about/minister" },
+      { label: "Honourable Minister of State", href: "/about/minister-state" },
+      { label: "Ministry History", href: "/about/history" },
+      { label: "Leadership", href: "/about/leadership" },
+      { label: "Mandate & Structure", href: "/about/mandate" },
     ],
   },
   {
-    label: "Consular Services",
-    href: "/consular-services",
+    label: "Missions",
+    href: "/missions",
     children: [
-      { label: "All Services", href: "/consular-services" },
-      { label: "Visa Services", href: "/consular-services/visa-services" },
-      { label: "Passport Services", href: "/consular-services/passport-services" },
-      {
-        label: "Emergency Travel Certificate",
-        href: "/consular-services/emergency-travel-certificate",
-      },
-      {
-        label: "Document Authentication",
-        href: "/consular-services/document-authentication",
-      },
-      { label: "Notarial Services", href: "/consular-services/notarial-services" },
-      { label: "Consular Assistance", href: "/consular-services/consular-assistance" },
+      { label: "All Missions", href: "/missions" },
+      { label: "Africa", href: "/missions?region=africa" },
+      { label: "Americas", href: "/missions?region=americas" },
+      { label: "Asia Pacific", href: "/missions?region=asia" },
+      { label: "Europe", href: "/missions?region=europe" },
+      { label: "Middle East", href: "/missions?region=middle-east" },
     ],
   },
-  { label: "Bilateral Relations", href: "/relations" },
-  { label: "Nigerians in Diaspora", href: "/diaspora" },
-  { label: "News & Press", href: "/news" },
-  { label: "Public Notices", href: "/public-notices" },
-  { label: "Contact Us", href: "/contact" },
+  {
+    label: "Services",
+    href: "/services",
+    children: [
+      { label: "All Services", href: "/services" },
+      { label: "Visa & Passports", href: "/services/visa-passports" },
+      { label: "Document Authentication", href: "/services/document-authentication" },
+      { label: "Consular Assistance", href: "/services/consular-assistance" },
+      { label: "Diaspora Engagement", href: "/services/diaspora" },
+      { label: "Travel Advisory", href: "/services/travel-advisory" },
+    ],
+  },
+  {
+    label: "Policy",
+    href: "/policy",
+    children: [
+      { label: "Foreign Policy Overview", href: "/policy" },
+      { label: "4D Doctrine", href: "/policy#4d" },
+      { label: "Bilateral Relations", href: "/policy/bilateral" },
+      { label: "Multilateral Engagement", href: "/policy/multilateral" },
+      { label: "Economic Diplomacy", href: "/policy/economic" },
+    ],
+  },
+  { label: "Press", href: "/press" },
+  {
+    label: "Nigeria",
+    href: "/nigeria",
+    children: [
+      { label: "About Nigeria", href: "/nigeria" },
+      { label: "History", href: "/nigeria/history" },
+      { label: "People & Culture", href: "/nigeria/culture" },
+      { label: "Economy & Investment", href: "/nigeria/economy" },
+      { label: "Tourism", href: "/nigeria/tourism" },
+    ],
+  },
+  { label: "Contact", href: "/contact" },
 ];

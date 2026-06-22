@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: `${site.missionName} — ${site.city}, ${site.hostCountry}`,
     template: `%s | ${site.missionName}`,
   },
-  description: `Official website of the ${site.missionName} in ${site.city}, ${site.hostCountry}. Visa and passport services, consular assistance, public notices and Nigeria–${site.hostCountry} relations.`,
+  description: `Official website of the ${site.missionName}, Federal Republic of Nigeria. Diplomatic services, consular assistance, missions worldwide, and foreign policy under the 4D Doctrine.`,
   openGraph: {
     type: "website",
     siteName: site.missionName,
@@ -48,8 +48,8 @@ const jsonLd = {
   },
   parentOrganization: {
     "@type": "GovernmentOrganization",
-    name: "Ministry of Foreign Affairs, Federal Republic of Nigeria",
-    url: "https://foreignaffairs.gov.ng",
+    name: "Federal Republic of Nigeria",
+    url: "https://statehouse.gov.ng",
   },
 };
 
