@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/*
+  Official colour scheme — Embassy of Nigeria in Havana
+  Primary Navigation : Nigerian Green #0B5E3C
+  Background         : White          #FFFFFF
+  Section Headings   : Deep Green     #1F7A4C
+  Accent             : Gold           #E3B339
+  Body Text          : Dark Grey      #333333
+*/
+@theme {
+  --color-brand: #0b5e3c;
+  --color-brand-deep: #1f7a4c;
+  --color-brand-dark: #084a2f;
+  --color-gold: #e3b339;
+  --color-gold-dark: #c2952a;
+  --color-ink: #333333;
+  --color-mist: #f4f7f5;
+  --color-line: #e2e8e4;
+}
+
+@theme inline {
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-brand-dark);
+}
+
+/* Anchored sections clear the sticky header */
+[id] {
+  scroll-margin-top: 7rem;
+}
+
+/* Strong, visible focus state on every interactive element */
+:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip link — hidden until focused */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-brand);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Decorative surfaces for dark green bands */
+.pattern-diagonal {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.045) 0 1px,
+    transparent 1px 14px
+  );
+}
+.glow-gold {
+  background: radial-gradient(
+    55% 75% at 82% 8%,
+    rgba(227, 179, 57, 0.22),
+    transparent 62%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
