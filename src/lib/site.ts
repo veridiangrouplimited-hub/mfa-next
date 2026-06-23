@@ -12,8 +12,6 @@ export const site = {
   address: "Tafewa Balewa House, Central Business District, Abuja, FCT",
   email: "info@foreignaffairs.gov.ng",
   phones: ["+234 9 523 5000", "+234 9 523 5001"],
-  emergencyPhone: "+234 803 000 0001",
-
   ministers: {
     foreign: {
       name: "Ambassador Bianca Odumegwu-Ojukwu",
@@ -208,11 +206,11 @@ export const navigation: NavItem[] = [
         },
       ],
       featured: {
-        label: "Emergency Assistance",
-        desc: "If you are a Nigerian in distress abroad, contact the nearest mission or our 24-hour line.",
+        label: "Consular Services",
+        desc: "Passport processing, document legalisation, and consular support for Nigerians overseas.",
         href: "/services/consular-assistance",
-        cta: "Get help now",
-        icon: "alert",
+        cta: "View consular services",
+        icon: "shield",
       },
     },
   },

@@ -9,30 +9,120 @@ export const metadata: Metadata = {
   description: "The organisational departments, divisions and units of the Federal Ministry of Foreign Affairs, Nigeria.",
 };
 
-type Dept = { name: string; abbr?: string; tagline: string; icon: string };
+type Dept = {
+  name: string;
+  tagline: string;
+  icon: string;
+  mandate: string;
+  divisions: string[];
+  units: string[];
+};
 
 const depts: Dept[] = [
-  { name: "Office of the Honourable Minister of Foreign Affairs", abbr: "OHMFA", tagline: "Leadership & Policy Direction", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/ohmfa.svg" },
-  { name: "Office of the Honourable Minister of State", abbr: "OHMS", tagline: "Policy Support & Diplomatic Coordination", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/ohmfa2.svg" },
-  { name: "Office of the Permanent Secretary", abbr: "OPS", tagline: "Administrative Oversight & Coordination", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/ops.svg" },
-  { name: "Administration Department", tagline: "Operational Support & Resource Management", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/ad.svg" },
-  { name: "African Affairs Department", tagline: "Regional Diplomacy & African Integration", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/aad.svg" },
-  { name: "Planning, Research and Statistics Department", abbr: "PRS", tagline: "Policy Analysis & Strategic Insight", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/prs.svg" },
-  { name: "Consular and Legal Department", tagline: "Citizen Services & International Law", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/consular.svg" },
-  { name: "Economic, Trade and Investment Department", abbr: "ETID", tagline: "Economic Diplomacy & Investment Promotion", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/etid.svg" },
-  { name: "Finance and Accounts Department", tagline: "Financial Stewardship & Accountability", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/ops.svg" },
-  { name: "Foreign Service Inspectorate Department", tagline: "Performance Audit & Compliance", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/fsid.svg" },
-  { name: "International Organization Department", tagline: "Multilateral Engagement & Global Representation", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/iod.svg" },
-  { name: "Protocol Department", tagline: "Diplomatic Protocol & Event Coordination", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/pd.svg" },
-  { name: "Regions Department", tagline: "Geographic Diplomacy & Bilateral Relations", icon: "https://foreignaffairs.gov.ng/aboutpage/icons/rd.svg" },
-];
-
-const divisions = [
-  { name: "Information & Public Diplomacy Division", tagline: "Media relations and public outreach" },
-  { name: "Human Resources Division", tagline: "Recruitment, welfare and career management" },
-  { name: "Legal Advisory Unit", tagline: "In-house legal counsel and treaty compliance" },
-  { name: "Internal Audit Unit", tagline: "Fiduciary oversight and compliance verification" },
-  { name: "ICT Unit", tagline: "Digital infrastructure and systems administration" },
+  {
+    name: "Office of the Honourable Minister of Foreign Affairs",
+    tagline: "Leadership & Policy Direction",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/ohmfa.svg",
+    mandate: "The apex office of the Ministry's organogram. Facilitates the day-to-day operations of the Minister and ensures the effective representation of Nigeria on the global stage.",
+    divisions: ["Special Duties Division", "Ministerial Correspondence Division"],
+    units: ["Protocol Unit", "Public Communications Unit"],
+  },
+  {
+    name: "Office of the Honourable Minister of State",
+    tagline: "Policy Support & Diplomatic Coordination",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/ohmfa2.svg",
+    mandate: "Supports the Minister of State in coordinating diplomatic activities and policy implementation across the Ministry.",
+    divisions: ["Policy Coordination Division"],
+    units: ["Public Liaison Unit", "Scheduling & Correspondence Unit"],
+  },
+  {
+    name: "Office of the Permanent Secretary",
+    tagline: "Administrative Oversight & Coordination",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/ops.svg",
+    mandate: "Provides administrative leadership and operational oversight across all departments, divisions and units of the Ministry.",
+    divisions: ["Internal Management Division"],
+    units: ["Legal Advisory Unit", "Internal Audit Unit"],
+  },
+  {
+    name: "Administration Department",
+    tagline: "Operational Support & Resource Management",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/ad.svg",
+    mandate: "Responsible for the overall administration of the Ministry including personnel management, general services and logistical support.",
+    divisions: ["Human Resources Division", "General Services Division", "Transport & Logistics Division"],
+    units: ["Records Management Unit", "Information & Communications Technology Unit"],
+  },
+  {
+    name: "African Affairs Department",
+    tagline: "Regional Diplomacy & African Integration",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/aad.svg",
+    mandate: "Manages Nigeria's bilateral and multilateral diplomatic relations across the African continent, including African Union affairs.",
+    divisions: ["West Africa Division", "East Africa Division", "Southern Africa Division", "North Africa Division", "Central Africa Division"],
+    units: ["African Union Affairs Unit"],
+  },
+  {
+    name: "Planning, Research and Statistics Department",
+    tagline: "Policy Analysis & Strategic Insight",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/prs.svg",
+    mandate: "Provides research, analysis and statistical data to guide foreign policy formulation and strategic planning across the Ministry.",
+    divisions: ["Research & Analysis Division", "Statistics & Data Division"],
+    units: ["Policy Documentation Unit", "Strategic Planning Unit"],
+  },
+  {
+    name: "Consular and Legal Department",
+    tagline: "Citizen Services & International Law",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/consular.svg",
+    mandate: "Administers consular services for Nigerians abroad and handles international legal matters, treaty obligations and nationality affairs.",
+    divisions: ["Consular Services Division", "Legal Affairs Division"],
+    units: ["Nationality & Citizenship Unit", "Treaty & Conventions Unit", "Visa Processing Unit"],
+  },
+  {
+    name: "Economic, Trade and Investment Department",
+    tagline: "Economic Diplomacy & Investment Promotion",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/etid.svg",
+    mandate: "Drives Nigeria's economic diplomacy agenda — promoting trade, attracting foreign direct investment and managing commercial attaché functions at missions.",
+    divisions: ["Trade & Commerce Division", "Investment Promotion Division"],
+    units: ["Economic Intelligence Unit", "Commercial Attaché Coordination Unit"],
+  },
+  {
+    name: "Finance and Accounts Department",
+    tagline: "Financial Stewardship & Accountability",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/ops.svg",
+    mandate: "Manages the Ministry's budgetary resources, financial transactions, payroll and ensures compliance with public finance regulations.",
+    divisions: ["Budget & Planning Division", "Accounts & Payments Division"],
+    units: ["Internal Control Unit", "Revenue & Remittance Unit"],
+  },
+  {
+    name: "Foreign Service Inspectorate Department",
+    tagline: "Performance Audit & Compliance",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/fsid.svg",
+    mandate: "Conducts periodic inspections and performance assessments of Nigerian diplomatic missions worldwide to ensure compliance with established standards.",
+    divisions: ["Mission Inspection Division", "Compliance & Standards Division"],
+    units: ["Performance Evaluation Unit"],
+  },
+  {
+    name: "International Organization Department",
+    tagline: "Multilateral Engagement & Global Representation",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/iod.svg",
+    mandate: "Coordinates Nigeria's engagement with international and multilateral organisations including the United Nations, Commonwealth, and African Union bodies.",
+    divisions: ["United Nations System Division", "Commonwealth & ECOWAS Division", "Specialised Agencies Division"],
+    units: ["Treaty & Convention Unit", "Multilateral Affairs Unit"],
+  },
+  {
+    name: "Protocol Department",
+    tagline: "Diplomatic Protocol & Event Coordination",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/pd.svg",
+    mandate: "Manages all matters of diplomatic protocol at the federal level — including state visits, accreditation of foreign diplomats and official ceremonies.",
+    divisions: ["State Protocol Division", "Diplomatic Corps Affairs Division"],
+    units: ["Accreditation & Credentials Unit", "VIP & State Visits Unit"],
+  },
+  {
+    name: "Regions Department",
+    tagline: "Geographic Diplomacy & Bilateral Relations",
+    icon: "https://foreignaffairs.gov.ng/aboutpage/icons/rd.svg",
+    mandate: "Oversees Nigeria's bilateral diplomatic relations outside Africa — covering the Americas, Europe, Asia-Pacific and the Middle East.",
+    divisions: ["Americas & Caribbean Division", "Europe Division", "Asia-Pacific Division", "Middle East & Gulf Division"],
+    units: ["Bilateral Relations Coordination Unit"],
+  },
 ];
 
 export default function DepartmentsPage() {
@@ -55,54 +145,74 @@ export default function DepartmentsPage() {
             icon="building"
             lead="Nigeria's Ministry of Foreign Affairs operates through 13 departments — each responsible for a specific cluster of the nation's foreign policy functions."
           />
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {depts.map((d) => (
+
+          <ul className="mt-8 space-y-5">
+            {depts.map((d, i) => (
               <li
                 key={d.name}
-                className="group flex flex-col rounded border border-line bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand hover:shadow-md"
+                className="overflow-hidden rounded border border-line bg-white shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded bg-brand/5 p-2 transition-colors group-hover:bg-brand/10">
-                  <img src={d.icon} alt="" aria-hidden="true" className="h-8 w-8 object-contain" />
+                {/* Department header */}
+                <div className="flex items-start gap-5 border-b border-line/60 bg-mist/40 px-6 py-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded bg-brand/8 p-2">
+                    <img src={d.icon} alt="" aria-hidden="true" className="h-8 w-8 object-contain" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand text-[11px] font-bold text-white">
+                        {i + 1}
+                      </span>
+                      <h2 className="font-serif text-base font-bold leading-snug text-brand-deep">
+                        {d.name}
+                      </h2>
+                    </div>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-gold">{d.tagline}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-ink/75">{d.mandate}</p>
+                  </div>
                 </div>
-                <p className="mb-1 font-serif text-sm font-bold leading-tight text-brand-deep">
-                  {d.abbr ?? d.name}
-                </p>
-                {d.abbr && (
-                  <p className="mb-2 text-[10px] font-semibold uppercase tracking-wide text-ink/45">
-                    {d.name}
-                  </p>
-                )}
-                <p className="mt-auto text-xs leading-relaxed text-ink/65">{d.tagline}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
 
-        {/* Divider */}
-        <div className="mb-16 h-px bg-line" aria-hidden="true" />
+                {/* Divisions & Units */}
+                <div className="grid gap-0 sm:grid-cols-2">
+                  {/* Divisions */}
+                  <div className="border-b border-line/40 px-6 py-4 sm:border-b-0 sm:border-r">
+                    <h3 className="mb-3 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-brand">
+                      <Icon name="briefcase" className="h-3.5 w-3.5" />
+                      Divisions
+                    </h3>
+                    {d.divisions.length > 0 ? (
+                      <ul className="space-y-1.5">
+                        {d.divisions.map((div) => (
+                          <li key={div} className="flex items-start gap-2 text-sm text-ink/80">
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand/40" aria-hidden="true" />
+                            {div}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm text-ink/40 italic">Nil</p>
+                    )}
+                  </div>
 
-        {/* Divisions & Units */}
-        <section id="divisions" className="mb-16 scroll-mt-24">
-          <SectionHeading
-            eyebrow="Supporting functions"
-            title="Divisions & Units"
-            id="divisions-heading"
-            icon="briefcase"
-            lead="Cross-cutting divisions and specialised units that support the work of all departments across the Ministry."
-          />
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {divisions.map((d) => (
-              <li
-                key={d.name}
-                className="flex items-start gap-3 rounded border border-line bg-white p-5 shadow-sm"
-              >
-                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded bg-brand/10 text-brand">
-                  <Icon name="briefcase" className="h-3.5 w-3.5" />
-                </span>
-                <span>
-                  <span className="block text-sm font-bold text-brand-deep">{d.name}</span>
-                  <span className="mt-0.5 block text-xs text-ink/60">{d.tagline}</span>
-                </span>
+                  {/* Units */}
+                  <div className="px-6 py-4">
+                    <h3 className="mb-3 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-gold">
+                      <Icon name="building" className="h-3.5 w-3.5" />
+                      Units
+                    </h3>
+                    {d.units.length > 0 ? (
+                      <ul className="space-y-1.5">
+                        {d.units.map((unit) => (
+                          <li key={unit} className="flex items-start gap-2 text-sm text-ink/80">
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold/60" aria-hidden="true" />
+                            {unit}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm text-ink/40 italic">Nil</p>
+                    )}
+                  </div>
+                </div>
               </li>
             ))}
           </ul>

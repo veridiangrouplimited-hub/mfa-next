@@ -3,11 +3,11 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import Icon, { type IconName } from "@/components/Icon";
 import { getServices } from "@/data/services";
-import { site } from "@/lib/site";
+import { site } from "@/lib/site"; // used for site.email
 
 export const metadata: Metadata = {
   title: "Consular Services",
-  description: `Visa, passport, emergency travel, document authentication, notarial services and consular assistance at the ${site.missionName}.`,
+  description: `Visa, passport, document authentication, notarial services and consular support at the ${site.missionName}.`,
 };
 
 export default async function ConsularServicesPage() {
@@ -51,8 +51,7 @@ export default async function ConsularServicesPage() {
             </h2>
             <p className="text-sm leading-relaxed">
               Complete your application online first, pay the official fee through the relevant
-              government portal, and book an appointment. Walk-in submissions are accepted only
-              for genuine emergencies.
+              government portal, and book an appointment. All submissions are by appointment only.
             </p>
           </div>
           <div className="rounded border border-line bg-mist p-6">
@@ -66,17 +65,14 @@ export default async function ConsularServicesPage() {
               solicitation to {site.email}.
             </p>
           </div>
-          <div className="rounded border-l-4 border-red-700 bg-red-50 p-6">
-            <h2 className="mb-2 flex items-center gap-2 font-serif text-lg font-bold text-red-800">
-              <Icon name="alert" className="h-5 w-5" />
-              Emergencies
+          <div className="rounded border-l-4 border-brand bg-brand/5 p-6">
+            <h2 className="mb-2 flex items-center gap-2 font-serif text-lg font-bold text-brand-deep">
+              <Icon name="globe" className="h-5 w-5" />
+              Find a Mission
             </h2>
             <p className="text-sm leading-relaxed">
-              For emergencies involving a Nigerian citizen — arrest, hospitalisation, bereavement
-              or distress — call the 24-hour line:{" "}
-              <a href={`tel:${site.emergencyPhone}`} className="font-bold text-red-800 underline">
-                {site.emergencyPhone}
-              </a>
+              For in-person consular services, locate your nearest Nigerian mission — embassy,
+              high commission or consulate. All missions provide consular services during office hours.
             </p>
           </div>
         </div>

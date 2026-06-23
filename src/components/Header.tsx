@@ -96,9 +96,9 @@ export default function Header() {
                   <Image
                     src="/images/mfa-logox.png"
                     alt="Coat of Arms — Federal Republic of Nigeria"
-                    width={60}
-                    height={60}
-                    className="h-12 w-12 object-contain md:h-[60px] md:w-[60px]"
+                    width={80}
+                    height={80}
+                    className="h-16 w-16 object-contain md:h-[80px] md:w-[80px]"
                     priority
                   />
                 </button>
@@ -340,12 +340,12 @@ export default function Header() {
             </ul>
             <div className="px-4 pb-4">
               <Link
-                href="/services/consular-assistance"
+                href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="flex w-full items-center justify-center gap-2 rounded bg-gold px-4 py-3 text-sm font-bold text-brand-dark"
+                className="flex w-full items-center justify-center gap-2 rounded bg-white/10 px-4 py-3 text-sm font-bold text-white border border-white/20"
               >
-                <Icon name="alert" className="h-4 w-4" />
-                Emergency Assistance
+                <Icon name="mail" className="h-4 w-4" />
+                Contact the Ministry
               </Link>
             </div>
           </div>

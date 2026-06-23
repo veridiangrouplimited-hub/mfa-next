@@ -25,8 +25,7 @@ export default function NationalIdentityPage() {
     <>
       <PageHeader
         title="National Identity"
-        breadcrumbs={[
-          { label: "Home", href: "/" },
+        crumbs={[
           { label: "Nigeria", href: "/nigeria" },
           { label: "National Identity" },
         ]}

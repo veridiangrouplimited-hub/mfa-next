@@ -112,24 +112,6 @@ export default function TravelAdvisoryPage() {
         crumbs={[{ label: "Travel Advisories" }]}
       />
 
-      {/* Emergency alert bar */}
-      <div className="border-b border-red-200 bg-red-50">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3">
-          <div className="flex items-center gap-3">
-            <Icon name="alert" className="h-5 w-5 shrink-0 text-red-600" />
-            <p className="text-sm font-semibold text-red-800">
-              Nigerian in distress abroad? Contact your nearest Nigerian mission immediately or call our 24-hour hotline.
-            </p>
-          </div>
-          <a
-            href={`tel:${site.emergencyPhone}`}
-            className="flex shrink-0 items-center gap-2 rounded bg-red-600 px-4 py-2 text-xs font-bold text-white hover:bg-red-700"
-          >
-            <Icon name="phone" className="h-3.5 w-3.5" />
-            {site.emergencyPhone}
-          </a>
-        </div>
-      </div>
 
       <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
 
@@ -205,21 +187,21 @@ export default function TravelAdvisoryPage() {
           </ul>
         </section>
 
-        {/* Emergency contacts */}
+        {/* Key contacts */}
         <section className="mb-16">
           <SectionHeading
-            eyebrow="Emergency contacts"
-            title="Key Emergency Contacts"
-            id="emergency"
+            eyebrow="Ministry contacts"
+            title="Key Ministry Contacts"
+            id="contacts"
             icon="phone"
           />
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <div className="rounded border border-red-200 bg-red-50 p-5">
-              <Icon name="phone" className="mb-3 h-6 w-6 text-red-600" />
-              <h3 className="mb-1 font-serif text-sm font-bold text-ink">24-Hour Hotline</h3>
-              <p className="text-[11px] text-ink/60 mb-2">Nigerians in distress abroad</p>
-              <a href={`tel:${site.emergencyPhone}`} className="text-sm font-bold text-red-700 hover:underline">
-                {site.emergencyPhone}
+            <div className="rounded border border-line bg-white p-5 shadow-sm">
+              <Icon name="phone" className="mb-3 h-6 w-6 text-brand" />
+              <h3 className="mb-1 font-serif text-sm font-bold text-ink">Ministry Phone</h3>
+              <p className="text-[11px] text-ink/60 mb-2">Abuja headquarters</p>
+              <a href={`tel:${site.phones[0]}`} className="text-sm font-bold text-brand hover:underline">
+                {site.phones[0]}
               </a>
             </div>
             <div className="rounded border border-line bg-white p-5 shadow-sm">
@@ -247,7 +229,7 @@ export default function TravelAdvisoryPage() {
             <div>
               <h2 className="font-serif text-xl font-bold text-brand-deep">Need Consular Assistance?</h2>
               <p className="mt-1 text-sm text-ink/75">
-                If you are a Nigerian citizen abroad facing a legal, medical or personal emergency, our consular team is available to help.
+                Nigerian citizens overseas requiring consular support — including lost passport replacement, legal assistance or welfare checks — can contact their nearest mission.
               </p>
             </div>
             <div className="flex gap-3">

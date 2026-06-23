@@ -4,13 +4,29 @@ import { site, govLinks } from "@/lib/site";
 import Icon, { type IconName } from "@/components/Icon";
 import FlagStripe from "@/components/FlagStripe";
 
-const quickLinks = [
+const aboutLinks = [
+  { label: "About the Ministry", href: "/about" },
+  { label: "Mandate, Mission & Vision", href: "/about/mandate" },
+  { label: "Departments & Units", href: "/about/departments" },
+  { label: "Agencies & Parastatals", href: "/about/agencies" },
+  { label: "History of the MFA", href: "/about/history" },
+  { label: "Diplomatic Missions", href: "/missions" },
+];
+
+const servicesLinks = [
   { label: "Document Authentication", href: "/services/document-authentication" },
   { label: "Visa & Passports", href: "/services/visa-passports" },
-  { label: "Consular Assistance", href: "/services/consular-assistance" },
+  { label: "Consular Services", href: "/services/consular-assistance" },
+  { label: "Diaspora Engagement", href: "/services/diaspora" },
   { label: "Travel Advisory", href: "/services/travel-advisory" },
+];
+
+const mediaLinks = [
+  { label: "News & Updates", href: "/news" },
+  { label: "Press Releases", href: "/press" },
   { label: "Public Notices", href: "/public-notices" },
-  { label: "News & Press Releases", href: "/press" },
+  { label: "4D Foreign Policy", href: "/policy" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const legalLinks = [
@@ -26,6 +42,7 @@ export default function Footer() {
       <FlagStripe className="h-1.5" />
       <div className="h-px bg-gold/60" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Column 1 — Ministry identity + contact */}
         <div>
           <div className="mb-5 flex items-center gap-4">
             <Image
@@ -61,20 +78,17 @@ export default function Footer() {
                 {site.email}
               </a>
             </p>
-            <p className="flex gap-2 font-semibold text-white">
-              <Icon name="alert" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-              Emergency: {site.emergencyPhone}
-            </p>
           </address>
         </div>
 
-        <nav aria-label="Quick links">
+        {/* Column 2 — About & Structure */}
+        <nav aria-label="About the Ministry">
           <h2 className="mb-4 flex items-center gap-2 font-serif text-base font-bold">
             <span className="inline-block h-px w-6 bg-gold" aria-hidden="true" />
-            Quick Links
+            About &amp; Structure
           </h2>
           <ul className="space-y-2.5 text-sm">
-            {quickLinks.map((l) => (
+            {aboutLinks.map((l) => (
               <li key={l.href + l.label}>
                 <Link href={l.href} className="text-white/85 hover:text-gold hover:underline">
                   {l.label}
@@ -84,29 +98,41 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Nigerian government links">
-          <h2 className="mb-4 flex items-center gap-2 font-serif text-base font-bold">
-            <span className="inline-block h-px w-6 bg-gold" aria-hidden="true" />
-            Government of Nigeria
-          </h2>
-          <ul className="space-y-2.5 text-sm">
-            {govLinks.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-white/85 hover:text-gold hover:underline"
-                >
-                  {l.label}
-                  <Icon name="external" className="h-3 w-3" />
-                  <span className="sr-only">(opens in a new tab)</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {/* Column 3 — Services & Press */}
+        <div>
+          <nav aria-label="Ministry Services">
+            <h2 className="mb-4 flex items-center gap-2 font-serif text-base font-bold">
+              <span className="inline-block h-px w-6 bg-gold" aria-hidden="true" />
+              Services
+            </h2>
+            <ul className="space-y-2.5 text-sm">
+              {servicesLinks.map((l) => (
+                <li key={l.href + l.label}>
+                  <Link href={l.href} className="text-white/85 hover:text-gold hover:underline">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav aria-label="Press and Media" className="mt-7">
+            <h2 className="mb-4 flex items-center gap-2 font-serif text-base font-bold">
+              <span className="inline-block h-px w-6 bg-gold" aria-hidden="true" />
+              Press &amp; Information
+            </h2>
+            <ul className="space-y-2.5 text-sm">
+              {mediaLinks.map((l) => (
+                <li key={l.href + l.label}>
+                  <Link href={l.href} className="text-white/85 hover:text-gold hover:underline">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
 
+        {/* Column 4 — Connect + Government Links */}
         <div>
           <h2 className="mb-4 flex items-center gap-2 font-serif text-base font-bold">
             <span className="inline-block h-px w-6 bg-gold" aria-hidden="true" />
@@ -129,13 +155,33 @@ export default function Footer() {
             ))}
           </ul>
           <h3 className="mb-2 text-sm font-bold">Office Hours</h3>
-          <ul className="space-y-1 text-sm text-white/85">
+          <ul className="mb-7 space-y-1 text-sm text-white/85">
             {site.officeHours.map((h) => (
               <li key={h.days}>
                 <span className="font-medium text-white">{h.days}:</span> {h.hours}
               </li>
             ))}
           </ul>
+
+          <nav aria-label="Nigerian government links">
+            <h3 className="mb-3 text-sm font-bold">Government of Nigeria</h3>
+            <ul className="space-y-2 text-sm">
+              {govLinks.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-white/85 hover:text-gold hover:underline"
+                  >
+                    {l.label}
+                    <Icon name="external" className="h-3 w-3" />
+                    <span className="sr-only">(opens in a new tab)</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
 

@@ -7,7 +7,7 @@ import Icon, { type IconName } from "@/components/Icon";
 import SectionHeading from "@/components/SectionHeading";
 import FlagStripe from "@/components/FlagStripe";
 import SectionDivider from "@/components/SectionDivider";
-import NewsCarousel from "@/components/NewsCarousel";
+import HomeNewsTabs from "@/components/HomeNewsTabs";
 const fourDPillars: { icon: IconName; title: string; text: string }[] = [
   {
     icon: "users",
@@ -34,7 +34,6 @@ const fourDPillars: { icon: IconName; title: string; text: string }[] = [
 
 export default async function Home() {
   const [services, news] = await Promise.all([getServices(), getNews()]);
-  const latestNews = [...news].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
   const pressReleases = [...news]
     .filter((n) => n.category === "Press Release")
     .sort((a, b) => b.date.localeCompare(a.date))
@@ -94,16 +93,15 @@ export default async function Home() {
                   Federal Republic of Nigeria &middot; Official Website
                 </p>
 
-                {/* Monumental headline — stacked two lines */}
+                {/* Monumental headline */}
                 <h1 id="hero-heading" className="leading-none">
-                  <span className="block font-sans text-[13px] font-semibold uppercase tracking-[0.42em] text-white/38 md:text-sm">
-                    Ministry of
+                  <span className="block font-sans text-[11px] font-semibold uppercase tracking-[0.42em] text-white/38 md:text-[13px]">
+                    Ministry of Foreign Affairs &middot; Federal Republic of Nigeria
                   </span>
-                  <span className="mt-3 block font-serif text-[3.75rem] font-bold leading-[0.92] tracking-tight text-white md:text-[5.25rem] lg:text-[6.25rem]">
-                    Foreign
-                  </span>
-                  <span className="block font-serif text-[3.75rem] font-bold leading-[0.92] tracking-tight text-gold md:text-[5.25rem] lg:text-[6.25rem]">
-                    Affairs
+                  <span className="mt-4 block font-serif text-[2.5rem] font-bold leading-[1.06] tracking-tight text-white md:text-[3.25rem] lg:text-[4rem]">
+                    We Are The{" "}
+                    <span className="text-gold">Gateway</span>
+                    {" "}To Africa&rsquo;s Most Populous Nation
                   </span>
                 </h1>
 
@@ -139,16 +137,16 @@ export default async function Home() {
                     href="/contact"
                     className="inline-flex items-center gap-2 border border-gold/30 bg-gold/[0.06] px-5 py-4 text-sm font-bold uppercase tracking-[0.12em] text-gold/85 transition-all hover:bg-gold/10 hover:text-gold"
                   >
-                    <Icon name="alert" className="h-4 w-4" />
-                    Emergency
+                    <Icon name="mail" className="h-4 w-4" />
+                    Contact Us
                   </Link>
                 </div>
 
                 {/* Stats strip — larger numbers */}
                 <div className="mt-12 flex flex-wrap gap-10 border-t border-white/[0.09] pt-9">
                   {[
-                    { value: "112", label: "Global Missions" },
-                    { value: "63+", label: "Years of Diplomacy" },
+                    { value: "109", label: "Global Missions" },
+                    { value: "65+", label: "Years of Diplomacy" },
                     { value: "220M+", label: "Nigerians Served" },
                   ].map((s) => (
                     <div key={s.label}>
@@ -174,11 +172,11 @@ export default async function Home() {
                   {/* Links */}
                   <ul className="divide-y divide-white/[0.06]">
                     {[
-                      { icon: "visa" as const,     label: "Visas & Passports",       sub: "Apply, renew or check status",        href: "/services/visa-passports" },
-                      { icon: "document" as const, label: "Document Authentication", sub: "Apostille & legalisation",            href: "/services/document-authentication" },
-                      { icon: "shield" as const,   label: "Consular Assistance",     sub: "Emergency help for Nigerians abroad", href: "/services/consular-assistance" },
-                      { icon: "globe" as const,    label: "Diplomatic Missions",     sub: "Find a mission near you",             href: "/missions" },
-                      { icon: "plane" as const,    label: "Travel Advisories",       sub: "Safety info by destination",          href: "/travel-advisory" },
+                      { icon: "document" as const, label: "Document Authentication", sub: "Apostille, legalisation & notarisation",  href: "/services/document-authentication" },
+                      { icon: "visa" as const,     label: "Visa & Passports",        sub: "Apply, renew or check status",             href: "/services/visa-passports" },
+                      { icon: "shield" as const,   label: "Consular Services",       sub: "Support for Nigerians overseas",           href: "/services/consular-assistance" },
+                      { icon: "globe" as const,    label: "Diplomatic Missions",     sub: "Find a mission near you",                  href: "/missions" },
+                      { icon: "plane" as const,    label: "Travel Advisories",       sub: "Safety info by destination",               href: "/travel-advisory" },
                     ].map((s) => (
                       <li key={s.label}>
                         <Link
@@ -198,14 +196,14 @@ export default async function Home() {
                     ))}
                   </ul>
 
-                  {/* Emergency footer */}
+                  {/* Ministry contact footer */}
                   <div className="border-t border-white/[0.07] bg-black/20 px-7 py-4">
                     <Link
                       href="/contact"
                       className="group flex items-center gap-3 text-xs text-white/48 transition-colors hover:text-white/78"
                     >
-                      <Icon name="alert" className="h-3.5 w-3.5 shrink-0 text-gold" />
-                      <span>24/7 Consular Emergency Line</span>
+                      <Icon name="mail" className="h-3.5 w-3.5 shrink-0 text-gold" />
+                      <span>Ministry Enquiries &amp; Contact Information</span>
                       <Icon name="arrow" className="ml-auto h-3 w-3 shrink-0 text-white/18 transition-all group-hover:translate-x-1 group-hover:text-gold/58" />
                     </Link>
                   </div>
@@ -225,17 +223,16 @@ export default async function Home() {
           <div>
             <SectionHeading
               eyebrow="Latest from the Ministry"
-              title="News & Press Releases"
+              title="News &amp; Press Releases"
               id="news-heading"
               icon="bell"
-              link={{ label: "All news", href: "/press" }}
             />
-            <NewsCarousel items={latestNews} />
+            <HomeNewsTabs items={news} />
           </div>
           <div>
             <SectionHeading eyebrow="Official statements" title="Press Releases" icon="newspaper" />
             <ul className="space-y-3">
-              {(pressReleases.length > 0 ? pressReleases : latestNews.slice(0, 3)).map((n) => (
+              {(pressReleases.length > 0 ? pressReleases : news.slice(0, 3)).map((n) => (
                 <li key={n.slug} className="group rounded border border-line bg-white p-4 transition-all hover:border-brand/40 hover:shadow-sm">
                   <time dateTime={n.date} className="block mb-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-brand/70">
                     {formatDate(n.date)}

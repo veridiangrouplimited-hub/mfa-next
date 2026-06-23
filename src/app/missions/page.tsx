@@ -34,10 +34,10 @@ export default function MissionsPage() {
   const [view, setView]               = useState<"list" | "map">("list");
   const [query, setQuery]             = useState("");
 
-  const regionMissions = useMemo(
-    () => region === "All" ? missions : missions.filter((m) => m.region === region),
-    [region]
-  );
+  const regionMissions = useMemo(() => {
+    const list = region === "All" ? missions : missions.filter((m) => m.region === region);
+    return [...list].sort((a, b) => a.country.localeCompare(b.country) || a.city.localeCompare(b.city));
+  }, [region]);
 
   const filtered = useMemo(() => {
     let list = regionMissions;

@@ -37,11 +37,11 @@ const services: Service[] = [
   },
   {
     icon: "shield",
-    title: "Consular Assistance",
+    title: "Consular Services",
     href: "/services/consular-assistance",
-    desc: "Emergency support for Nigerians in distress abroad — lost passports, arrest, hospitalisation, death of a citizen, or repatriation.",
-    tags: ["Emergency", "Repatriation", "Lost Passport", "Prisoner Welfare"],
-    cta: "Get help",
+    desc: "Consular support for Nigerians overseas — lost passport replacement, legal assistance, welfare support, and citizen registration.",
+    tags: ["Lost Passport", "Repatriation", "Citizen Registration", "Welfare Support"],
+    cta: "Learn more",
   },
   {
     icon: "users",
@@ -64,7 +64,7 @@ const services: Service[] = [
 const quickLinks = [
   { label: "Book an appointment", icon: "bell" as IconName, href: "/services/visa-passports#appointment" },
   { label: "Check application status", icon: "document" as IconName, href: "/services/visa-passports#status" },
-  { label: "Emergency helpline", icon: "phone" as IconName, href: "/services/consular-assistance#emergency" },
+  { label: "Consular services", icon: "shield" as IconName, href: "/services/consular-assistance" },
   { label: "Download forms", icon: "arrow" as IconName, href: "/services/visa-passports#forms" },
 ];
 
@@ -72,8 +72,8 @@ export default function ServicesPage() {
   return (
     <>
       <PageHeader
-        title="Consular Services"
-        lead="The Ministry of Foreign Affairs provides a full range of consular services to Nigerian citizens and foreign nationals — from passports and visas to emergency assistance abroad."
+        title="Ministry Services"
+        lead="The Ministry of Foreign Affairs provides a full range of services to Nigerian citizens and foreign nationals — from passports and visas to document authentication and consular support."
         crumbs={[{ label: "Services" }]}
       />
 
@@ -130,28 +130,28 @@ export default function ServicesPage() {
         </ul>
       </section>
 
-      {/* Emergency CTA */}
+      {/* Diplomatic Missions CTA */}
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand to-brand-deep text-white">
         <div className="relative mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-4 py-12">
           <div>
-            <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-gold">24/7 Emergency Assistance</p>
-            <h2 className="font-serif text-2xl font-bold">Nigerian Citizen in Distress?</h2>
+            <p className="mb-1 text-xs font-bold uppercase tracking-[0.2em] text-gold">Global Presence</p>
+            <h2 className="font-serif text-2xl font-bold">Need to Reach a Nigerian Mission?</h2>
             <p className="mt-2 max-w-lg text-sm text-white/85">
-              If you are a Nigerian national facing an emergency abroad — arrest, hospitalisation, lost documents or repatriation — contact the nearest Nigerian mission immediately or reach our Emergency Response Centre.
+              Nigeria maintains 109 missions worldwide. Find your nearest embassy, high commission or consulate for in-person consular and passport services.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/services/consular-assistance"
+              href="/missions"
               className="rounded bg-gold px-6 py-3 text-sm font-bold text-brand-dark hover:bg-gold-dark"
             >
-              Get Emergency Help
+              Find a Mission
             </Link>
             <Link
-              href="/missions"
+              href="/contact"
               className="rounded border border-white/50 px-6 py-3 text-sm font-bold text-white hover:bg-white/10"
             >
-              Find Nearest Mission
+              Contact the Ministry
             </Link>
           </div>
         </div>
