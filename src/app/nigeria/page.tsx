@@ -4,7 +4,6 @@ import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import NigeriaMap from "@/components/NigeriaMap";
 import Icon, { type IconName } from "@/components/Icon";
-
 export const metadata: Metadata = {
   title: "About Nigeria",
   description: "About the Federal Republic of Nigeria — Africa's largest economy, history, people, culture and investment opportunities.",

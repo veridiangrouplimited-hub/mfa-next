@@ -3,7 +3,6 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import Icon from "@/components/Icon";
-
 export const metadata: Metadata = {
   title: "Nigeria — People & Culture",
   description: "Nigeria's people, cultures, languages, music and traditions — a portrait of Africa's most diverse nation.",

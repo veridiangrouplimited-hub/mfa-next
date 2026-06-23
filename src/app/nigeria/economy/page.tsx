@@ -3,7 +3,6 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import Icon, { type IconName } from "@/components/Icon";
-
 export const metadata: Metadata = {
   title: "Nigeria — Economy & Investment",
   description: "Nigeria's economy — Africa's largest, with unmatched opportunities in energy, agriculture, technology and manufacturing.",

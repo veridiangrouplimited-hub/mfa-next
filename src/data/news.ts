@@ -33,7 +33,7 @@ export const newsCategories: NewsCategory[] = [
 ];
 
 const unsplash = (id: string, w = 1200) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=max&w=${w}&q=70`;
 
 // Static fallback — used when WORDPRESS_URL is not set or WP is unreachable.
 export const news: NewsItem[] = [
@@ -155,6 +155,179 @@ export const news: NewsItem[] = [
       src: unsplash("1488646953014-85cb44e25828"),
       alt: "Business delegates networking at a large investment conference",
       credit: "Photo: Unsplash — placeholder, replace with event photography",
+    },
+  },
+  // ── HMFA News (additional speeches & statements) ──────────────────────────
+  {
+    slug: "minister-bilateral-meeting-uk",
+    title: "Minister Odumegwu-Ojukwu Holds Bilateral Talks with UK Foreign Secretary",
+    category: "Speech",
+    date: "2026-10-08",
+    department: "Office of the Minister",
+    excerpt:
+      "Nigeria's Foreign Minister met with the British Foreign Secretary in London, with discussions covering trade, migration management, and the return of Benin Bronzes held in British institutions.",
+    body: [
+      "The Honourable Minister of Foreign Affairs, Ambassador Bianca Odumegwu-Ojukwu, on 8 October 2026 held bilateral talks with the UK Secretary of State for Foreign, Commonwealth and Development Affairs in London.",
+      "The meeting addressed the deepening of bilateral trade and investment ties, the return of the Benin Bronzes currently held in the British Museum, and the ongoing Nigeria–UK migration and mobility discussions.",
+      "The Minister emphasised Nigeria's commitment to a comprehensive framework that facilitates regular pathways for Nigerians while strengthening cooperation on irregular migration.",
+    ],
+    image: {
+      src: unsplash("1504711434489-ffb3af91c8b6"),
+      alt: "Two diplomats in a formal meeting setting",
+      credit: "Photo: Unsplash — placeholder",
+    },
+  },
+  {
+    slug: "minister-g20-foreign-ministers",
+    title: "Minister Delivers Statement at G20 Foreign Ministers' Meeting",
+    category: "Speech",
+    date: "2026-11-12",
+    department: "Office of the Minister",
+    excerpt:
+      "Nigeria's Foreign Minister addressed the G20 Foreign Ministers' Meeting in Brazil, calling for a just global order that prioritises Africa's development financing needs.",
+    body: [
+      "The Honourable Minister of Foreign Affairs represented Nigeria at the G20 Foreign Ministers' Meeting held in Brasília, Brazil on 12 November 2026.",
+      "In her remarks, the Minister underscored Africa's expectation that G20 members uphold commitments on climate finance, debt restructuring and the reform of multilateral development banks.",
+      "The Minister also met bilaterally with her counterparts from Brazil, Germany and Saudi Arabia on the margins of the meeting.",
+    ],
+    image: {
+      src: unsplash("1573496359142-b8d87734a5a2"),
+      alt: "Foreign ministers at a multilateral forum",
+      credit: "Photo: Unsplash — placeholder",
+    },
+  },
+  {
+    slug: "minister-state-visit-reception",
+    title: "Minister Hosts Diplomatic Reception for Heads of Mission",
+    category: "Official Statement",
+    date: "2026-07-15",
+    department: "Office of the Minister",
+    excerpt:
+      "The Minister of Foreign Affairs hosted a reception for Heads of Mission accredited to Nigeria, outlining the Ministry's priorities and commitment to deepening bilateral partnerships.",
+    body: [
+      "The Honourable Minister of Foreign Affairs, Ambassador Bianca Odumegwu-Ojukwu, on 15 July 2026 hosted a diplomatic reception for Heads of Mission and Chargés d'Affaires accredited to the Federal Republic of Nigeria.",
+      "Addressing the assembled diplomats, the Minister outlined the Ministry's strategic priorities for the remainder of 2026, including the deepening of economic diplomacy, the advancement of Africa's reform agenda at the UN, and expanded services for the Nigerian diaspora.",
+      "The reception was attended by over 80 envoys representing countries from all regions of the world.",
+    ],
+    image: {
+      src: unsplash("1511578314322-38e04b644ce1"),
+      alt: "Diplomats gathered at a formal reception",
+      credit: "Photo: Unsplash — placeholder",
+    },
+  },
+  {
+    slug: "minister-commonwealth-foreign-ministers",
+    title: "Nigeria Actively Participates in Commonwealth Foreign Ministers Meeting",
+    category: "Official Statement",
+    date: "2026-09-05",
+    department: "International Organisation Department",
+    excerpt:
+      "Nigeria's delegation to the Commonwealth Foreign Ministers Meeting in London advocated for reform of international financial institutions and greater Commonwealth investment in Africa.",
+    body: [
+      "Nigeria actively participated in the Commonwealth Foreign Ministers Meeting held in London on 5 September 2026, with the delegation advancing Nigeria's positions on international financial architecture reform and Commonwealth trade facilitation.",
+      "The meeting adopted a communiqué committing member states to enhanced cooperation on climate resilience, digital transformation and the promotion of democratic values.",
+      "Nigeria's engagement at the Commonwealth reflects the Ministry's commitment to leveraging multilateral platforms in the service of national development objectives.",
+    ],
+    image: {
+      src: unsplash("1529156069898-49953e39b3ac"),
+      alt: "Commonwealth ministers in a formal meeting",
+      credit: "Photo: Unsplash — placeholder",
+    },
+  },
+  // ── HMOS News (Mission Activities) ────────────────────────────────────────
+  {
+    slug: "hmos-diaspora-dialogue-uk",
+    title: "Minister of State Hosts Diaspora Town Hall in London",
+    category: "Mission Activity",
+    date: "2026-10-20",
+    department: "Office of the Minister of State",
+    excerpt:
+      "The Honourable Minister of State for Foreign Affairs held a town hall with members of the Nigerian community in London, addressing passport services, dual citizenship and welfare concerns.",
+    body: [
+      "The Honourable Minister of State for Foreign Affairs visited London on 20 October 2026 and hosted a town hall meeting with members of the Nigerian diaspora community.",
+      "Over 300 Nigerians attended the event, which addressed common concerns including delays in passport renewals, dual citizenship procedures and the consular services available at the Nigeria High Commission.",
+      "The Minister gave assurances that the Ministry is committed to improving service delivery for Nigerians abroad and announced plans for expanded e-service options at overseas missions.",
+    ],
+    image: {
+      src: unsplash("1529156069898-49953e39b3ac"),
+      alt: "A community town hall meeting with a large audience",
+      credit: "Photo: Unsplash — placeholder",
+    },
+  },
+  {
+    slug: "hmos-usa-diaspora-engagement",
+    title: "Minister of State Concludes Diaspora Engagement Tour of the United States",
+    category: "Mission Activity",
+    date: "2026-11-05",
+    department: "Office of the Minister of State",
+    excerpt:
+      "A three-city diaspora engagement tour of New York, Houston and Atlanta connected the Minister of State with thousands of Nigerians living in the United States.",
+    body: [
+      "The Honourable Minister of State for Foreign Affairs concluded a successful three-city tour of the United States from 2–5 November 2026, visiting Nigerian diaspora communities in New York, Houston and Atlanta.",
+      "At each location, the Minister held open dialogue sessions with community associations, professional networks and student groups, addressing issues ranging from passport services to investment opportunities in Nigeria.",
+      "The tour also included meetings with Nigerian-American business leaders to explore partnerships aligned with the Ministry's economic diplomacy agenda.",
+    ],
+    image: {
+      src: unsplash("1521791136064-7986c2920216"),
+      alt: "A minister meeting with diaspora community members",
+      credit: "Photo: Unsplash — placeholder",
+    },
+  },
+  {
+    slug: "hmos-canada-outreach",
+    title: "Minister of State Meets Nigerian Community Leaders in Canada",
+    category: "Mission Activity",
+    date: "2026-08-22",
+    department: "Office of the Minister of State",
+    excerpt:
+      "During a working visit to Ottawa and Toronto, the Minister of State for Foreign Affairs engaged Nigerian community groups and discussed enhanced consular services with the High Commission.",
+    body: [
+      "The Honourable Minister of State for Foreign Affairs visited Canada from 20–22 August 2026 and held separate meetings with Nigerian community leaders in Ottawa and Toronto.",
+      "The visits focused on welfare issues facing the Nigerian diaspora in Canada, including document authentication services, consular registration and civic engagement.",
+      "The Minister also held a working session with the High Commissioner and senior mission staff to review service delivery and identify areas for improvement.",
+    ],
+    image: {
+      src: unsplash("1556761175-5973dc0f32e7"),
+      alt: "A diplomatic working visit with community leaders",
+      credit: "Photo: Unsplash — placeholder",
+    },
+  },
+  {
+    slug: "hmos-south-africa-community-visit",
+    title: "Minister of State Visits Nigerian Community in South Africa",
+    category: "Mission Activity",
+    date: "2026-07-30",
+    department: "Office of the Minister of State",
+    excerpt:
+      "The Minister of State for Foreign Affairs visited Johannesburg and Pretoria to meet Nigerian community leaders and review mission operations in South Africa.",
+    body: [
+      "The Honourable Minister of State for Foreign Affairs made an official visit to South Africa from 28–30 July 2026, meeting with the Nigerian High Commission, community organisations and business networks in Johannesburg and Pretoria.",
+      "The visit addressed concerns raised by Nigerians in South Africa including documentation services, repatriation of remains and welfare support for vulnerable citizens.",
+      "The Minister also held a bilateral meeting with the South African Deputy Minister of International Relations to discuss the strengthening of Nigeria–South Africa relations.",
+    ],
+    image: {
+      src: unsplash("1488646953014-85cb44e25828"),
+      alt: "An official meeting in a diplomatic setting",
+      credit: "Photo: Unsplash — placeholder",
+    },
+  },
+  {
+    slug: "hmos-uae-diaspora-outreach",
+    title: "Minister of State Engages Nigerian Diaspora in the UAE",
+    category: "Mission Activity",
+    date: "2026-06-18",
+    department: "Office of the Minister of State",
+    excerpt:
+      "During a working visit to Dubai and Abu Dhabi, the Minister of State held meetings with Nigerian professionals, entrepreneurs and community associations across the Emirates.",
+    body: [
+      "The Honourable Minister of State for Foreign Affairs visited the United Arab Emirates from 16–18 June 2026, engaging with the large Nigerian community in Dubai and Abu Dhabi.",
+      "Sessions were held with professionals in the financial, technology and hospitality sectors, as well as community welfare groups supporting Nigerians in vulnerable situations.",
+      "The Ministry used the visit to announce expanded document authentication services at the Nigerian Embassy in Abu Dhabi, reducing processing times from 10 to 5 working days.",
+    ],
+    image: {
+      src: unsplash("1540575467063-178a50c2df87"),
+      alt: "A diplomatic engagement event in the Gulf region",
+      credit: "Photo: Unsplash — placeholder",
     },
   },
 ];

@@ -3,7 +3,6 @@ import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import Icon from "@/components/Icon";
-
 export const metadata: Metadata = {
   title: "Nigeria — History",
   description: "The history of Nigeria — from ancient kingdoms to independence and the modern federation.",

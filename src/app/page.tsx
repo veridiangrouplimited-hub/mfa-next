@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
 import { getServices } from "@/data/services";
-import { getNews, formatDate } from "@/data/news";
+import { getNews } from "@/data/news";
 import Icon, { type IconName } from "@/components/Icon";
 import SectionHeading from "@/components/SectionHeading";
 import FlagStripe from "@/components/FlagStripe";
@@ -34,10 +34,6 @@ const fourDPillars: { icon: IconName; title: string; text: string }[] = [
 
 export default async function Home() {
   const [services, news] = await Promise.all([getServices(), getNews()]);
-  const pressReleases = [...news]
-    .filter((n) => n.category === "Press Release")
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3);
 
   return (
     <>
@@ -87,18 +83,9 @@ export default async function Home() {
 
               {/* ── LEFT: Text ── */}
               <div>
-                {/* Eyebrow */}
-                <p className="mb-7 flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.32em] text-gold/80">
-                  <span className="h-px w-14 bg-gold/60" aria-hidden="true" />
-                  Federal Republic of Nigeria &middot; Official Website
-                </p>
-
                 {/* Monumental headline */}
                 <h1 id="hero-heading" className="leading-none">
-                  <span className="block font-sans text-[11px] font-semibold uppercase tracking-[0.42em] text-white/38 md:text-[13px]">
-                    Ministry of Foreign Affairs &middot; Federal Republic of Nigeria
-                  </span>
-                  <span className="mt-4 block font-serif text-[2.5rem] font-bold leading-[1.06] tracking-tight text-white md:text-[3.25rem] lg:text-[4rem]">
+                  <span className="mt-4 block font-serif text-[2rem] font-bold leading-[1.1] tracking-tight text-white md:text-[2.5rem] lg:text-[3rem]">
                     We Are The{" "}
                     <span className="text-gold">Gateway</span>
                     {" "}To Africa&rsquo;s Most Populous Nation
@@ -219,43 +206,13 @@ export default async function Home() {
 
       {/* News + Notices */}
       <section aria-labelledby="news-heading" className="mx-auto max-w-7xl px-4 py-16 md:py-20">
-        <div className="grid gap-14 lg:grid-cols-[2fr_1fr]">
-          <div>
-            <SectionHeading
-              eyebrow="Latest from the Ministry"
-              title="News &amp; Press Releases"
-              id="news-heading"
-              icon="bell"
-            />
-            <HomeNewsTabs items={news} />
-          </div>
-          <div>
-            <SectionHeading eyebrow="Official statements" title="Press Releases" icon="newspaper" />
-            <ul className="space-y-3">
-              {(pressReleases.length > 0 ? pressReleases : news.slice(0, 3)).map((n) => (
-                <li key={n.slug} className="group rounded border border-line bg-white p-4 transition-all hover:border-brand/40 hover:shadow-sm">
-                  <time dateTime={n.date} className="block mb-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-brand/70">
-                    {formatDate(n.date)}
-                  </time>
-                  <Link
-                    href={`/press/${n.slug}`}
-                    className="block text-sm font-bold leading-snug text-brand-deep group-hover:text-brand group-hover:underline"
-                  >
-                    {n.title}
-                  </Link>
-                  <p className="mt-1.5 text-xs leading-relaxed text-ink/60 line-clamp-2">{n.excerpt}</p>
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/press"
-              className="mt-5 inline-flex items-center gap-1.5 rounded border-2 border-brand px-5 py-2.5 text-sm font-bold text-brand transition-colors hover:bg-brand hover:text-white"
-            >
-              All press releases
-              <Icon name="arrow" className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
+        <SectionHeading
+          eyebrow="Latest from the Ministry"
+          title="News &amp; Press Releases"
+          id="news-heading"
+          icon="bell"
+        />
+        <HomeNewsTabs items={news} />
       </section>
 
       <SectionDivider />

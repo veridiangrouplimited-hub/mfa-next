@@ -24,7 +24,7 @@ export default function ContactPage() {
             <section aria-labelledby="address-heading">
               <h2 id="address-heading" className="mb-3 flex items-center gap-2 font-serif text-xl font-bold text-brand-deep">
                 <Icon name="pin" className="h-5 w-5" />
-                Mission Address
+                Ministry Address
               </h2>
               <address className="text-sm not-italic leading-relaxed md:text-base">
                 {site.missionName}
@@ -88,7 +88,7 @@ export default function ContactPage() {
                 ))}
               </ul>
               <p className="mt-2 text-sm text-ink/70">
-                The Mission is closed on Nigerian and {site.hostCountry} public holidays — see{" "}
+                The Ministry is closed on Nigerian public holidays — see{" "}
                 <a href="/public-notices" className="font-semibold text-brand underline">
                   Public Notices
                 </a>

@@ -6,7 +6,7 @@ const categories = [
   "General Enquiry",
   "Visa Services",
   "Passport Services",
-  "Emergency Travel Certificate",
+  "Travel Certificate Services",
   "Document Authentication / Notarial",
   "Consular Assistance / Welfare",
   "Trade and Investment",
@@ -41,7 +41,7 @@ export default function ContactForm() {
     if (!data.message?.trim() || data.message.trim().length < 20)
       next.message = "Please describe your enquiry in at least 20 characters.";
     if (!data.consent)
-      next.consent = "Please confirm you consent to the Mission processing your details.";
+      next.consent = "Please confirm you consent to the Ministry processing your details.";
 
     setErrors(next);
     if (Object.keys(next).length > 0) return;
@@ -71,9 +71,8 @@ export default function ContactForm() {
           Thank you — your enquiry has been received.
         </h3>
         <p>
-          The relevant section of the Mission will respond to the email address you provided,
-          normally within three working days. For urgent matters involving the safety of a
-          Nigerian citizen, please call the 24-hour emergency line instead.
+          The relevant section of the Ministry will respond to the email address you provided,
+          normally within three working days.
         </p>
       </div>
     );
@@ -211,7 +210,7 @@ export default function ContactForm() {
             aria-describedby={errors.consent ? "consent-error" : undefined}
           />
           <span>
-            I consent to the Mission processing the details I have provided for the purpose of
+            I consent to the Ministry processing the details I have provided for the purpose of
             responding to this enquiry, in line with the{" "}
             <a href="/privacy-policy" className="font-semibold text-brand underline">
               Privacy Policy
@@ -223,7 +222,7 @@ export default function ContactForm() {
       </div>
 
       <p id="form-privacy-note" className="mt-4 text-xs leading-relaxed text-ink/70">
-        The Mission collects only the information needed to respond to your enquiry. Your details
+        The Ministry collects only the information needed to respond to your enquiry. Your details
         are not shared with third parties and are retained only for as long as necessary to
         resolve your enquiry. Do not include passport numbers, payment details or other sensitive
         information in this form.

@@ -55,28 +55,30 @@ export default function HomeNewsTabs({ items }: { items: NewsItem[] }) {
       {display.length === 0 ? (
         <p className="py-8 text-sm text-ink/50">No news in this category yet.</p>
       ) : (
-        <ul className="space-y-4">
+        <ul className="grid gap-4 sm:grid-cols-3">
           {display.map((n, i) => (
             <li key={n.slug}>
-              <article className={`group flex gap-4 rounded border border-line bg-white p-4 transition-all hover:border-brand/40 hover:shadow-sm ${i === 0 ? "ring-1 ring-brand/10" : ""}`}>
-                {n.image.src && (
-                  <Link
-                    href={`/news/${n.slug}`}
-                    className="relative hidden h-20 w-28 shrink-0 overflow-hidden rounded border border-line bg-mist sm:block"
-                    tabIndex={-1}
-                    aria-hidden="true"
-                  >
-                    <Image src={n.image.src} alt="" fill sizes="112px" className="object-cover" />
-                  </Link>
-                )}
-                <div className="min-w-0 flex-1">
-                  <time dateTime={n.date} className="block mb-1 text-[10px] font-bold uppercase tracking-[0.15em] text-brand/70">
+              <article className={`group flex h-full flex-col rounded border border-line bg-white overflow-hidden transition-all hover:border-brand/40 hover:shadow-md ${i === 0 ? "ring-1 ring-brand/10" : ""}`}>
+                <Link
+                  href={`/news/${n.slug}`}
+                  className="relative block h-52 w-full shrink-0 overflow-hidden bg-brand/8"
+                  tabIndex={-1}
+                  aria-hidden="true"
+                >
+                  {n.image.src ? (
+                    <Image src={n.image.src} alt="" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-contain" />
+                  ) : (
+                    <div className="h-full w-full bg-brand/10" />
+                  )}
+                </Link>
+                <div className="flex flex-1 flex-col p-4">
+                  <time dateTime={n.date} className="block mb-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-brand/70">
                     {formatDate(n.date)}
                   </time>
-                  <h3 className="font-serif text-sm font-bold leading-snug text-brand-deep group-hover:text-brand group-hover:underline">
+                  <h3 className="flex-1 font-serif text-sm font-bold leading-snug text-brand-deep group-hover:text-brand group-hover:underline">
                     <Link href={`/news/${n.slug}`}>{n.title}</Link>
                   </h3>
-                  <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-ink/60">{n.excerpt}</p>
+                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-ink/60">{n.excerpt}</p>
                 </div>
               </article>
             </li>
