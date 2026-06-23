@@ -13,17 +13,19 @@ const MissionsMap = dynamic(() => import("./MissionsMap"), { ssr: false, loading
   </div>
 ) });
 
-const REGIONS: (MissionRegion | "All")[] = ["All", "Africa", "Asia", "Americas", "Europe"];
+const REGIONS: (MissionRegion | "All")[] = ["Africa", "Asia", "Americas", "Europe", "All"];
 
 const categoryText: Record<MissionCategory, string> = {
-  "Embassy":         "text-brand font-bold",
-  "High Commission": "text-amber-600 font-bold",
-  "Consulate":       "text-blue-700 font-bold",
+  "Embassy":           "text-brand font-bold",
+  "Permanent Mission": "text-brand font-bold",
+  "High Commission":   "text-amber-600 font-bold",
+  "Consulate":         "text-blue-700 font-bold",
 };
 const categoryDot: Record<MissionCategory, string> = {
-  "Embassy":         "bg-brand",
-  "High Commission": "bg-amber-500",
-  "Consulate":       "bg-blue-700",
+  "Embassy":           "bg-brand",
+  "Permanent Mission": "bg-brand",
+  "High Commission":   "bg-amber-500",
+  "Consulate":         "bg-blue-700",
 };
 
 export default function MissionsPage() {
@@ -46,7 +48,7 @@ export default function MissionsPage() {
   }, [regionMissions, query]);
 
   const regionCounts = useMemo(() => ({
-    Embassy:          regionMissions.filter(m => m.category === "Embassy").length,
+    Embassy:          regionMissions.filter(m => m.category === "Embassy" || m.category === "Permanent Mission").length,
     "High Commission": regionMissions.filter(m => m.category === "High Commission").length,
     Consulate:        regionMissions.filter(m => m.category === "Consulate").length,
   }), [regionMissions]);

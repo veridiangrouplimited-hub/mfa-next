@@ -30,6 +30,70 @@ export interface Service {
 // Static fallback — used when WORDPRESS_URL is not set or WP is unreachable.
 export const services: Service[] = [
   {
+    slug: "visa-passports",
+    title: "Visa & Passports",
+    icon: "passport",
+    summary:
+      "Nigerian passport applications, renewals and visa information for travel to Nigeria — processed through our global network of missions.",
+    overview: [
+      "The Ministry of Foreign Affairs, through its network of embassies and high commissions, processes Nigerian passport applications and handles visa applications for foreign nationals intending to travel to Nigeria.",
+      "All passport applications begin online through the Nigeria Immigration Service portal, followed by an in-person biometric capture appointment at the nearest Nigerian mission.",
+    ],
+    eligibility: [
+      "Nigerian citizens seeking a new passport or renewal.",
+      "Foreign nationals applying for a Nigerian entry visa.",
+      "Holders of passports that are lost, expired, damaged or fully stamped.",
+    ],
+    requirements: [
+      "Completed online application on the NIS e-passport portal with payment receipt.",
+      "Current or expired Nigerian passport (for renewals).",
+      "National Identification Number (NIN).",
+      "Two recent passport-size photographs on a white background.",
+      "For first-time adult applicants: birth certificate and evidence of Nigerian citizenship.",
+    ],
+    process: [
+      "Apply and pay on the Nigeria Immigration Service e-passport portal.",
+      "Book a biometric capture appointment at the nearest Nigerian mission.",
+      "Attend in person with your documents for biometric enrolment.",
+      "Track your application status using the reference number issued at capture.",
+      "Collect your new passport in person, or by registered courier where offered.",
+    ],
+    fees: [
+      { item: "32-page e-passport (5-year validity)", amount: "US$106" },
+      { item: "64-page e-passport (10-year validity)", amount: "US$130" },
+      { item: "Single-entry visa (short visit)", amount: "US$160" },
+      { item: "Multiple-entry visa", amount: "US$250" },
+    ],
+    feesNote:
+      "Fees are set by the Nigeria Immigration Service, vary by nationality on the basis of reciprocity, and are paid online. Fees are non-refundable.",
+    processingTime: [
+      "Passport standard processing: 6–12 weeks from biometric capture.",
+      "Visa standard applications: 5–10 working days from submission of complete documents.",
+    ],
+    faqs: [
+      {
+        q: "Can I renew my passport outside Nigeria?",
+        a: "Yes. Passport renewals are handled at all Nigerian embassies, high commissions and consulates worldwide. You do not need to return to Nigeria to renew.",
+      },
+      {
+        q: "Do I need an appointment to submit my application?",
+        a: "Yes. Applications are received by appointment at all missions. Contact your nearest mission to book.",
+      },
+      {
+        q: "Is a visa on arrival available?",
+        a: "Visa on arrival is available to nationals of select countries with prior approval from the Nigeria Immigration Service. Check the NIS portal for current eligibility.",
+      },
+    ],
+    forms: [
+      { label: "Passport application checklist (PDF)", href: "#" },
+      { label: "Visa application guide (PDF)", href: "#" },
+    ],
+    externalLinks: [
+      { label: "Nigeria Immigration Service", href: "https://immigration.gov.ng" },
+      { label: "NIS e-passport portal", href: "https://passport.immigration.gov.ng" },
+    ],
+  },
+  {
     slug: "document-authentication",
     title: "Document Authentication",
     icon: "seal",

@@ -50,181 +50,178 @@ export default async function Home() {
       {/* Hero */}
       <section
         aria-labelledby="hero-heading"
-        className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand to-brand-deep text-white"
+        className="relative flex min-h-[92vh] flex-col overflow-hidden bg-[#03201a] text-white"
       >
-        {/* Hero photo — layered behind dark green overlay */}
+        {/* LAYER 1 — Hero photo at elevated opacity for cinematic depth */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero.jpg')", opacity: 0.40 }}
+          aria-hidden="true"
+        />
+        {/* LAYER 2 — Directional gradient: left-dark → right-transparent */}
         <div
           className="pointer-events-none absolute inset-0"
-          style={{ backgroundImage: "url('/images/hero.jpg')", backgroundSize: "cover", backgroundPosition: "center top", opacity: 0.28 }}
+          style={{ background: "linear-gradient(105deg, rgba(3,32,26,0.97) 0%, rgba(8,74,47,0.90) 42%, rgba(11,94,60,0.60) 68%, rgba(11,94,60,0.18) 100%)" }}
           aria-hidden="true"
         />
-        {/* Dark overlay to keep text readable */}
+        {/* LAYER 3 — Bottom vignette for grounding */}
         <div
           className="pointer-events-none absolute inset-0"
-          style={{ background: "linear-gradient(135deg, rgba(8,74,47,0.82) 0%, rgba(11,94,60,0.72) 50%, rgba(31,122,76,0.65) 100%)" }}
+          style={{ background: "linear-gradient(to top, rgba(3,32,26,0.85) 0%, transparent 38%)" }}
           aria-hidden="true"
         />
-        {/* Diagonal line texture */}
-        <div className="pattern-diagonal pointer-events-none absolute inset-0" aria-hidden="true" />
-        {/* Gold glow — top-right */}
-        <div className="glow-gold pointer-events-none absolute inset-0" aria-hidden="true" />
-        {/* Gold glow — bottom-left for depth */}
+        {/* Gold atmospheric glow — upper right */}
         <div
           className="pointer-events-none absolute inset-0"
-          style={{ background: "radial-gradient(42% 52% at 10% 92%, rgba(227,179,57,0.10), transparent)" }}
+          style={{ background: "radial-gradient(50% 55% at 82% 12%, rgba(227,179,57,0.09), transparent)" }}
           aria-hidden="true"
         />
-        {/* Coat of Arms ghost watermark */}
+        {/* Coat of Arms ghost — right-center, large */}
         <div
-          className="pointer-events-none absolute bottom-0 right-0 h-[480px] w-[480px] mix-blend-screen"
-          style={{
-            backgroundImage: "url('/images/mfa-logo-white.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            opacity: 0.055,
-            transform: "translate(28%, 28%)",
-          }}
+          className="pointer-events-none absolute right-0 top-1/2 h-[600px] w-[600px] -translate-y-1/2 translate-x-[32%] mix-blend-screen"
+          style={{ backgroundImage: "url('/images/mfa-logo-white.png')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", opacity: 0.05 }}
           aria-hidden="true"
         />
 
-        <div className="relative mx-auto max-w-7xl px-4 pb-12 pt-16 md:pb-16 md:pt-24">
-          <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:items-center">
+        {/* Gold top accent line */}
+        <div className="relative h-[3px] flex-shrink-0 bg-gradient-to-r from-transparent via-gold/75 to-transparent" aria-hidden="true" />
 
-            {/* Left — text block */}
-            <div>
-              {/* Eyebrow */}
-              <p className="mb-5 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.3em] text-gold/90">
-                <span className="inline-block h-px w-12 bg-gold/80" aria-hidden="true" />
-                Federal Republic of Nigeria &middot; Official Website
-              </p>
+        {/* Main content — vertically centered in remaining space */}
+        <div className="relative flex flex-1 items-center">
+          <div className="mx-auto w-full max-w-7xl px-4 py-16 md:py-20">
+            <div className="grid gap-10 lg:grid-cols-[1.75fr_1fr] lg:items-center lg:gap-14">
 
-              {/* Headline — two-tier hierarchy */}
-              <h1 id="hero-heading">
-                <span className="block font-sans text-sm font-semibold uppercase tracking-[0.28em] text-white/45 md:text-base">
-                  Ministry of
-                </span>
-                <span className="mt-1.5 block font-serif text-5xl font-bold leading-[1.02] text-white md:text-[3.8rem]">
-                  Foreign{" "}
-                  <span className="relative inline-block text-gold">
-                    Affairs
-                    <span className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-gold/35" aria-hidden="true" />
-                  </span>
-                </span>
-              </h1>
-
-              {/* Ornamental divider */}
-              <div className="mt-7 flex items-center gap-2" aria-hidden="true">
-                <span className="h-[2px] w-16 bg-gold" />
-                <span className="inline-block h-1.5 w-1.5 rotate-45 bg-gold" />
-                <span className="h-[2px] w-6 bg-white/20" />
-              </div>
-
-              {/* Lead */}
-              <p className="mt-6 max-w-xl text-base leading-[1.8] text-white/82 md:text-[1.05rem]">
-                Advancing Nigeria&rsquo;s national interests through the 4D Foreign Policy Doctrine &mdash;
-                Demography, Development, Diaspora and Democracy &mdash; for a stronger, more prosperous Nigeria.
-              </p>
-
-              {/* CTAs */}
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 rounded bg-gold px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-brand-dark shadow-lg shadow-black/25 transition-colors hover:bg-gold-dark"
-                >
-                  Services
-                  <Icon name="arrow" className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/policy"
-                  className="inline-flex items-center gap-2 rounded border border-white/40 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/10"
-                >
-                  Foreign Policy
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded border border-gold/60 bg-gold/[0.08] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-gold transition-colors hover:bg-gold/15"
-                >
-                  <Icon name="alert" className="h-4 w-4" />
-                  Emergency
-                </Link>
-              </div>
-
-              {/* Quick stats strip */}
-              <div className="mt-10 flex flex-wrap gap-8 border-t border-white/10 pt-8">
-                {[
-                  { value: "109", label: "Global Missions" },
-                  { value: "63+", label: "Years of Diplomacy" },
-                  { value: "220M+", label: "Nigerians Served" },
-                ].map((s) => (
-                  <div key={s.label}>
-                    <p className="font-serif text-[1.6rem] font-bold leading-none text-gold">{s.value}</p>
-                    <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — Quick-access panel */}
-            <div className="self-center overflow-hidden rounded-lg border border-white/[0.12] bg-white/[0.04] shadow-2xl shadow-black/30 backdrop-blur-sm">
-              {/* Gold top bar */}
-              <div className="h-[3px] bg-gradient-to-r from-gold via-gold-dark to-gold" aria-hidden="true" />
-
-              {/* Panel header */}
-              <div className="px-6 py-5">
-                <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-gold/80">
-                  Quick Access
+              {/* ── LEFT: Text ── */}
+              <div>
+                {/* Eyebrow */}
+                <p className="mb-7 flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.32em] text-gold/80">
+                  <span className="h-px w-14 bg-gold/60" aria-hidden="true" />
+                  Federal Republic of Nigeria &middot; Official Website
                 </p>
-                <h2 className="mt-1 font-serif text-base font-bold text-white">
-                  Ministry Services
-                </h2>
+
+                {/* Monumental headline — stacked two lines */}
+                <h1 id="hero-heading" className="leading-none">
+                  <span className="block font-sans text-[13px] font-semibold uppercase tracking-[0.42em] text-white/38 md:text-sm">
+                    Ministry of
+                  </span>
+                  <span className="mt-3 block font-serif text-[3.75rem] font-bold leading-[0.92] tracking-tight text-white md:text-[5.25rem] lg:text-[6.25rem]">
+                    Foreign
+                  </span>
+                  <span className="block font-serif text-[3.75rem] font-bold leading-[0.92] tracking-tight text-gold md:text-[5.25rem] lg:text-[6.25rem]">
+                    Affairs
+                  </span>
+                </h1>
+
+                {/* Slim gold rule */}
+                <div className="mt-8 flex items-center gap-3" aria-hidden="true">
+                  <span className="h-px w-10 bg-gold" />
+                  <span className="h-[5px] w-[5px] rounded-full bg-gold/50" />
+                  <span className="h-px w-20 bg-white/12" />
+                </div>
+
+                {/* Lead copy */}
+                <p className="mt-6 max-w-[520px] text-[1.0625rem] leading-[1.82] text-white/70">
+                  Advancing Nigeria&rsquo;s national interests through proactive diplomacy &mdash;
+                  fostering peace, attracting investment, and empowering Nigerians worldwide.
+                </p>
+
+                {/* CTAs — clear two-level hierarchy */}
+                <div className="mt-9 flex flex-wrap items-center gap-3">
+                  <Link
+                    href="/services"
+                    className="group inline-flex items-center gap-2.5 bg-gold px-7 py-4 text-sm font-bold uppercase tracking-[0.12em] text-brand-dark shadow-lg shadow-gold/20 transition-all hover:bg-gold-dark hover:shadow-xl hover:shadow-gold/25"
+                  >
+                    Ministry Services
+                    <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+                  <Link
+                    href="/missions"
+                    className="inline-flex items-center gap-2.5 border border-white/25 px-7 py-4 text-sm font-bold uppercase tracking-[0.12em] text-white/85 backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/[0.07] hover:text-white"
+                  >
+                    Find a Mission
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 border border-gold/30 bg-gold/[0.06] px-5 py-4 text-sm font-bold uppercase tracking-[0.12em] text-gold/85 transition-all hover:bg-gold/10 hover:text-gold"
+                  >
+                    <Icon name="alert" className="h-4 w-4" />
+                    Emergency
+                  </Link>
+                </div>
+
+                {/* Stats strip — larger numbers */}
+                <div className="mt-12 flex flex-wrap gap-10 border-t border-white/[0.09] pt-9">
+                  {[
+                    { value: "112", label: "Global Missions" },
+                    { value: "63+", label: "Years of Diplomacy" },
+                    { value: "220M+", label: "Nigerians Served" },
+                  ].map((s) => (
+                    <div key={s.label}>
+                      <p className="font-serif text-4xl font-bold leading-none text-gold md:text-5xl">{s.value}</p>
+                      <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/36">{s.label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* Service links */}
-              <ul className="divide-y divide-white/[0.07] border-t border-white/[0.07]">
-                {[
-                  { icon: "visa" as const,      label: "Visas & Passports",       sub: "Apply, renew or check status",          href: "/services/visa-passports" },
-                  { icon: "document" as const,  label: "Document Authentication", sub: "Apostille & legalisation services",      href: "/services/document-authentication" },
-                  { icon: "shield" as const,    label: "Consular Assistance",     sub: "Emergency help for Nigerians abroad",   href: "/services/consular-assistance" },
-                  { icon: "globe" as const,     label: "Diplomatic Missions",     sub: "Find a mission near you",               href: "/missions" },
-                  { icon: "plane" as const,     label: "Travel Advisories",       sub: "Up-to-date travel safety information",  href: "/travel-advisory" },
-                ].map((s) => (
-                  <li key={s.label}>
+              {/* ── RIGHT: Quick-access portal ── */}
+              <div className="self-center">
+                <div className="overflow-hidden rounded-xl border border-white/[0.10] bg-white/[0.035] shadow-2xl shadow-black/40 backdrop-blur-md">
+                  {/* Slim gold accent */}
+                  <div className="h-px bg-gradient-to-r from-transparent via-gold/65 to-transparent" aria-hidden="true" />
+
+                  {/* Header */}
+                  <div className="border-b border-white/[0.07] px-7 py-5">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-gold/72">Quick Access</p>
+                    <h2 className="mt-1.5 font-serif text-[17px] font-bold text-white">Ministry Services</h2>
+                  </div>
+
+                  {/* Links */}
+                  <ul className="divide-y divide-white/[0.06]">
+                    {[
+                      { icon: "visa" as const,     label: "Visas & Passports",       sub: "Apply, renew or check status",        href: "/services/visa-passports" },
+                      { icon: "document" as const, label: "Document Authentication", sub: "Apostille & legalisation",            href: "/services/document-authentication" },
+                      { icon: "shield" as const,   label: "Consular Assistance",     sub: "Emergency help for Nigerians abroad", href: "/services/consular-assistance" },
+                      { icon: "globe" as const,    label: "Diplomatic Missions",     sub: "Find a mission near you",             href: "/missions" },
+                      { icon: "plane" as const,    label: "Travel Advisories",       sub: "Safety info by destination",          href: "/travel-advisory" },
+                    ].map((s) => (
+                      <li key={s.label}>
+                        <Link
+                          href={s.href}
+                          className="group flex items-center gap-4 px-7 py-4 transition-colors hover:bg-white/[0.06]"
+                        >
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.05] text-gold/68 transition-colors group-hover:border-gold/40 group-hover:text-gold">
+                            <Icon name={s.icon} className="h-4 w-4" />
+                          </span>
+                          <span className="min-w-0 flex-1">
+                            <span className="block text-[13.5px] font-semibold text-white/85 transition-colors group-hover:text-white">{s.label}</span>
+                            <span className="block truncate text-[11px] text-white/40">{s.sub}</span>
+                          </span>
+                          <Icon name="arrow" className="h-3.5 w-3.5 shrink-0 text-white/18 transition-all group-hover:translate-x-1 group-hover:text-gold/72" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Emergency footer */}
+                  <div className="border-t border-white/[0.07] bg-black/20 px-7 py-4">
                     <Link
-                      href={s.href}
-                      className="group flex items-center gap-4 px-6 py-4 transition-colors hover:bg-white/[0.06]"
+                      href="/contact"
+                      className="group flex items-center gap-3 text-xs text-white/48 transition-colors hover:text-white/78"
                     >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] text-gold/75 transition-colors group-hover:border-gold/50 group-hover:text-gold">
-                        <Icon name={s.icon} className="h-4 w-4" />
-                      </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-sm font-semibold text-white/90 transition-colors group-hover:text-white">
-                          {s.label}
-                        </span>
-                        <span className="block truncate text-[11px] text-white/45">{s.sub}</span>
-                      </span>
-                      <Icon name="arrow" className="h-3.5 w-3.5 shrink-0 text-white/25 transition-transform group-hover:translate-x-1 group-hover:text-gold/80" />
+                      <Icon name="alert" className="h-3.5 w-3.5 shrink-0 text-gold" />
+                      <span>24/7 Consular Emergency Line</span>
+                      <Icon name="arrow" className="ml-auto h-3 w-3 shrink-0 text-white/18 transition-all group-hover:translate-x-1 group-hover:text-gold/58" />
                     </Link>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Emergency contact footer */}
-              <div className="border-t border-white/[0.08] bg-brand-dark/40 px-6 py-4">
-                <Link
-                  href="/contact"
-                  className="group flex items-center gap-3 text-xs text-white/55 transition-colors hover:text-white/80"
-                >
-                  <Icon name="alert" className="h-3.5 w-3.5 shrink-0 text-gold" />
-                  <span>24/7 Consular Emergency Line</span>
-                  <Icon name="arrow" className="ml-auto h-3 w-3 shrink-0 transition-transform group-hover:translate-x-1 text-white/25 group-hover:text-gold/60" />
-                </Link>
+                  </div>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
 
-        <FlagStripe className="relative h-1.5" />
+        <FlagStripe className="relative h-1.5 flex-shrink-0" />
       </section>
 
       {/* Priority notice strip */}

@@ -7,10 +7,9 @@ import Icon from "@/components/Icon";
 import { type NewsItem } from "@/data/news";
 
 const TABS = [
-  { id: "all",  label: "All",  title: "All news and updates" },
-  { id: "hmfa", label: "HMFA", title: "Speeches and statements by the Honourable Minister of Foreign Affairs" },
-  { id: "hmos", label: "HMOS", title: "Speeches and updates from the Honourable Minister of State" },
-  { id: "mfa",  label: "MFA",  title: "News, press releases and mission activities from the Ministry" },
+  { id: "hmfa", label: "HMFA News", title: "Speeches and statements by the Honourable Minister of Foreign Affairs" },
+  { id: "hmos", label: "HMOS News", title: "Speeches and updates from the Honourable Minister of State" },
+  { id: "mfa",  label: "MFA News",  title: "News, press releases and mission activities from the Ministry" },
 ] as const;
 
 type TabId = typeof TABS[number]["id"];
@@ -33,7 +32,7 @@ function longDate(iso: string) {
 export default function NewsClient({ items }: { items: NewsItem[] }) {
   const sorted = useMemo(() => [...items].sort((a, b) => b.date.localeCompare(a.date)), [items]);
 
-  const [tab, setTab]   = useState<TabId>("all");
+  const [tab, setTab]   = useState<TabId>("hmfa");
   const [page, setPage] = useState(1);
 
   const filtered = useMemo(() => filterByTab(sorted, tab), [sorted, tab]);
