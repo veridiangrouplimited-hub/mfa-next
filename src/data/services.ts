@@ -30,6 +30,56 @@ export interface Service {
 // Static fallback — used when WORDPRESS_URL is not set or WP is unreachable.
 export const services: Service[] = [
   {
+    slug: "document-authentication",
+    title: "Document Authentication",
+    icon: "seal",
+    summary:
+      "Apostille, notarisation and legalisation of Nigerian public documents for use abroad — and foreign documents for use in Nigeria.",
+    overview: [
+      "The Ministry authenticates official documents so they can be recognised by authorities in Nigeria or abroad. Nigeria is a signatory to the Hague Apostille Convention (1961).",
+      "Documents intended for use in another Hague member country can be given an Apostille certificate by the Federal Ministry of Justice in Abuja. For non-Hague countries, full consular legalisation at the relevant embassy is required.",
+    ],
+    eligibility: [
+      "Holders of Nigerian public documents intended for official use abroad.",
+      "Holders of foreign documents intended for official use in Nigeria.",
+      "Companies requiring authentication of commercial and trade documents.",
+    ],
+    requirements: [
+      "Original document, plus one photocopy.",
+      "Prior legalisation by the issuing country's foreign ministry, as applicable.",
+      "Valid identification of the applicant.",
+      "Completed authentication request form.",
+      "Evidence of payment of the prescribed fee.",
+    ],
+    process: [
+      "Confirm that the document carries the required prior legalisation.",
+      "Complete the authentication request form and pay the prescribed fee.",
+      "Submit the original document and copies at the nearest mission's consular section.",
+      "Collect the authenticated document on the date indicated on your submission slip.",
+    ],
+    fees: [
+      { item: "Authentication, per document (personal)", amount: "US$40" },
+      { item: "Authentication, per document (commercial)", amount: "US$80" },
+      { item: "Apostille certificate", amount: "Per Federal Ministry of Justice schedule" },
+    ],
+    feesNote: "Fees are payable per document and are non-refundable once processing begins.",
+    processingTime: ["3–5 working days from submission of complete documents."],
+    faqs: [
+      {
+        q: "What is the difference between apostille and legalisation?",
+        a: "An apostille is a simplified form of authentication used between Hague Convention countries. Full legalisation is required for countries outside the Hague Convention.",
+      },
+      {
+        q: "Does the Ministry verify the content of documents?",
+        a: "Authentication confirms the authenticity of the signature and seal of the issuing authority. It does not certify the truth of a document's contents.",
+      },
+    ],
+    forms: [{ label: "Authentication request form (PDF)", href: "#" }],
+    externalLinks: [
+      { label: "Federal Ministry of Justice — Apostille", href: "https://justice.gov.ng" },
+    ],
+  },
+  {
     slug: "visa-passports",
     title: "Visa & Passports",
     icon: "passport",
@@ -91,56 +141,6 @@ export const services: Service[] = [
     externalLinks: [
       { label: "Nigeria Immigration Service", href: "https://immigration.gov.ng" },
       { label: "NIS e-passport portal", href: "https://passport.immigration.gov.ng" },
-    ],
-  },
-  {
-    slug: "document-authentication",
-    title: "Document Authentication",
-    icon: "seal",
-    summary:
-      "Apostille, notarisation and legalisation of Nigerian public documents for use abroad — and foreign documents for use in Nigeria.",
-    overview: [
-      "The Ministry authenticates official documents so they can be recognised by authorities in Nigeria or abroad. Nigeria is a signatory to the Hague Apostille Convention (1961).",
-      "Documents intended for use in another Hague member country can be given an Apostille certificate by the Federal Ministry of Justice in Abuja. For non-Hague countries, full consular legalisation at the relevant embassy is required.",
-    ],
-    eligibility: [
-      "Holders of Nigerian public documents intended for official use abroad.",
-      "Holders of foreign documents intended for official use in Nigeria.",
-      "Companies requiring authentication of commercial and trade documents.",
-    ],
-    requirements: [
-      "Original document, plus one photocopy.",
-      "Prior legalisation by the issuing country's foreign ministry, as applicable.",
-      "Valid identification of the applicant.",
-      "Completed authentication request form.",
-      "Evidence of payment of the prescribed fee.",
-    ],
-    process: [
-      "Confirm that the document carries the required prior legalisation.",
-      "Complete the authentication request form and pay the prescribed fee.",
-      "Submit the original document and copies at the nearest mission's consular section.",
-      "Collect the authenticated document on the date indicated on your submission slip.",
-    ],
-    fees: [
-      { item: "Authentication, per document (personal)", amount: "US$40" },
-      { item: "Authentication, per document (commercial)", amount: "US$80" },
-      { item: "Apostille certificate", amount: "Per Federal Ministry of Justice schedule" },
-    ],
-    feesNote: "Fees are payable per document and are non-refundable once processing begins.",
-    processingTime: ["3–5 working days from submission of complete documents."],
-    faqs: [
-      {
-        q: "What is the difference between apostille and legalisation?",
-        a: "An apostille is a simplified form of authentication used between Hague Convention countries. Full legalisation is required for countries outside the Hague Convention.",
-      },
-      {
-        q: "Does the Ministry verify the content of documents?",
-        a: "Authentication confirms the authenticity of the signature and seal of the issuing authority. It does not certify the truth of a document's contents.",
-      },
-    ],
-    forms: [{ label: "Authentication request form (PDF)", href: "#" }],
-    externalLinks: [
-      { label: "Federal Ministry of Justice — Apostille", href: "https://justice.gov.ng" },
     ],
   },
   {

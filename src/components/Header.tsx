@@ -63,7 +63,7 @@ export default function Header() {
           <div className="flex items-center gap-5">
             <nav className="flex items-center gap-5" aria-label="Quick links">
               <Link href="/press" className="text-white/75 transition-colors hover:text-white">Press Releases</Link>
-              <Link href="/services/visa-passports" className="text-white/75 transition-colors hover:text-white">Visas &amp; Passports</Link>
+              <Link href="/services/visa-passports" className="text-white/75 transition-colors hover:text-white">Visa &amp; Passports</Link>
               <Link href="/the-atrium" className="text-white/75 transition-colors hover:text-white">The Atrium</Link>
               <Link href="/travel-advisory" className="text-white/75 transition-colors hover:text-white">Travel Advisories</Link>
             </nav>
@@ -132,13 +132,6 @@ export default function Header() {
                 <Icon name="search" className="h-5 w-5" />
               </button>
             </form>
-            <Link
-              href="/services/consular-assistance"
-              className="hidden items-center gap-2 rounded bg-gold px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-brand-dark shadow-sm hover:bg-gold-dark md:flex"
-            >
-              <Icon name="alert" className="h-4 w-4" />
-              Emergency
-            </Link>
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}

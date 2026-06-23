@@ -16,8 +16,8 @@ export interface Mission {
 }
 
 export const GLOBAL_STATS = {
-  total: 112,
-  embassies: 78,
+  total: 109,
+  embassies: 75,
   highCommissions: 22,
   consulates: 12,
 };
@@ -140,9 +140,6 @@ export const missions: Mission[] = [
   { name: "Permanent Mission of Nigeria to the United Nations, New York", city: "New York", country: "United States", region: "Americas", category: "Permanent Mission", address: "828 Second Avenue, New York, NY 10017, United States", hours: "9:00AM - 5:00PM (Monday - Friday)", website: "https://nigeriaun.gov.ng/", flag: "https://flagcdn.com/w160/us.png", lat: 40.7489, lng: -73.9680 },
   { name: "Permanent Mission of Nigeria to the UN Office & International Organisations, Geneva", city: "Geneva", country: "Switzerland", region: "Europe", category: "Permanent Mission", address: "Rue de Vermont 37-39, Case Postale 193, 1211 Geneva 20, Switzerland", hours: "9:00AM - 5:00PM (Monday - Friday)", website: "https://geneva.foreignaffairs.gov.ng/", flag: "https://flagcdn.com/w160/ch.png", lat: 46.2281, lng: 6.1385 },
   { name: "Permanent Mission of Nigeria to the African Union, Addis Ababa", city: "Addis Ababa", country: "Ethiopia", region: "Africa", category: "Permanent Mission", address: "African Union Commission, Roosevelt Street, Addis Ababa, Ethiopia", hours: "8:00AM - 5:00PM (Monday - Friday)", website: "https://addisababa.foreignaffairs.gov.ng/", flag: "/images/embassyflags/addis.jpg", lat: 8.9999, lng: 38.7578 },
-  { name: "Permanent Mission of Nigeria to the European Union, Brussels", city: "Brussels", country: "Belgium", region: "Europe", category: "Permanent Mission", address: "Rue de la Loi 81A, 1040 Brussels, Belgium", hours: "9:00AM - 5:00PM (Monday - Friday)", website: "https://brussels.foreignaffairs.gov.ng/", flag: "https://flagcdn.com/w160/be.png", lat: 50.8451, lng: 4.3610 },
-  { name: "Permanent Mission of Nigeria to UNESCO, Paris", city: "Paris", country: "France", region: "Europe", category: "Permanent Mission", address: "UNESCO House, 7 Place de Fontenoy, 75352 Paris 07 SP, France", hours: "9:00AM - 5:00PM (Monday - Friday)", website: "https://paris.foreignaffairs.gov.ng/", flag: "https://flagcdn.com/w160/fr.png", lat: 48.8494, lng: 2.3066 },
   { name: "Permanent Mission of Nigeria to the UN Office at Vienna", city: "Vienna", country: "Austria", region: "Europe", category: "Permanent Mission", address: "Vienna International Centre, Wagramer Strasse 5, 1220 Vienna, Austria", hours: "9:00AM - 5:00PM (Monday - Friday)", website: "https://vienna.foreignaffairs.gov.ng/", flag: "https://flagcdn.com/w160/at.png", lat: 48.2373, lng: 16.4099 },
-  { name: "Permanent Mission of Nigeria to UNEP & UN-Habitat, Nairobi", city: "Nairobi", country: "Kenya", region: "Africa", category: "Permanent Mission", address: "UNEP Headquarters, United Nations Avenue, Gigiri, Nairobi, Kenya", hours: "8:00AM - 5:00PM (Monday - Friday)", website: "https://nairobi.foreignaffairs.gov.ng/", flag: "/images/embassyflags/kenya.jpg", lat: -1.2469, lng: 36.8082 },
 ];
 

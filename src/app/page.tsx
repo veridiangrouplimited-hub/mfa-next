@@ -3,9 +3,7 @@ import Image from "next/image";
 import { site } from "@/lib/site";
 import { getServices } from "@/data/services";
 import { getNews, formatDate } from "@/data/news";
-import { getNotices } from "@/data/notices";
 import Icon, { type IconName } from "@/components/Icon";
-import NoticeBadge from "@/components/NoticeBadge";
 import SectionHeading from "@/components/SectionHeading";
 import FlagStripe from "@/components/FlagStripe";
 import SectionDivider from "@/components/SectionDivider";
@@ -35,15 +33,12 @@ const fourDPillars: { icon: IconName; title: string; text: string }[] = [
 
 
 export default async function Home() {
-  const [services, news, notices] = await Promise.all([getServices(), getNews(), getNotices()]);
+  const [services, news] = await Promise.all([getServices(), getNews()]);
   const latestNews = [...news].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
   const pressReleases = [...news]
     .filter((n) => n.category === "Press Release")
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 3);
-  const alertNotice = [...notices]
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .find((n) => n.priority === "Urgent" || n.priority === "Important");
 
   return (
     <>
@@ -223,22 +218,6 @@ export default async function Home() {
 
         <FlagStripe className="relative h-1.5 flex-shrink-0" />
       </section>
-
-      {/* Priority notice strip */}
-      {alertNotice && (
-        <div className="border-b border-gold/50 bg-gold/15">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3 text-sm">
-            <NoticeBadge priority={alertNotice.priority} />
-            <p className="min-w-0 flex-1 font-medium">{alertNotice.title}</p>
-            <Link
-              href={`/public-notices#${alertNotice.id}`}
-              className="shrink-0 font-bold text-brand underline hover:text-brand-deep"
-            >
-              Read notice
-            </Link>
-          </div>
-        </div>
-      )}
 
       {/* News + Notices */}
       <section aria-labelledby="news-heading" className="mx-auto max-w-7xl px-4 py-16 md:py-20">

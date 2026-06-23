@@ -98,10 +98,10 @@ export default function ContactPage() {
 
             <section aria-labelledby="social-heading" className="rounded border border-line bg-white p-5">
               <h2 id="social-heading" className="mb-1 font-serif text-xl font-bold text-brand-deep">
-                Follow the Mission
+                Follow the Ministry
               </h2>
               <p className="mb-4 text-sm text-ink/70">
-                Stay up to date with news, events and announcements from the Embassy.
+                Stay up to date with news, events and announcements from the Ministry.
               </p>
               <ul className="flex flex-wrap gap-3">
                 {site.social.map((s) => (

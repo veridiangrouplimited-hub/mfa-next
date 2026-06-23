@@ -5,8 +5,8 @@ import Icon, { type IconName } from "@/components/Icon";
 import FlagStripe from "@/components/FlagStripe";
 
 const quickLinks = [
-  { label: "Visa & Passports", href: "/services/visa-passports" },
   { label: "Document Authentication", href: "/services/document-authentication" },
+  { label: "Visa & Passports", href: "/services/visa-passports" },
   { label: "Consular Assistance", href: "/services/consular-assistance" },
   { label: "Travel Advisory", href: "/services/travel-advisory" },
   { label: "Public Notices", href: "/public-notices" },

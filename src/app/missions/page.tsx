@@ -29,9 +29,10 @@ const categoryDot: Record<MissionCategory, string> = {
 };
 
 export default function MissionsPage() {
-  const [region, setRegion]   = useState<MissionRegion | "All">("All");
-  const [view, setView]       = useState<"list" | "map">("list");
-  const [query, setQuery]     = useState("");
+  const [region, setRegion]           = useState<MissionRegion | "All">("All");
+  const [categoryFilter, setCategoryFilter] = useState<"Embassy" | "High Commission" | "Consulate" | null>(null);
+  const [view, setView]               = useState<"list" | "map">("list");
+  const [query, setQuery]             = useState("");
 
   const regionMissions = useMemo(
     () => region === "All" ? missions : missions.filter((m) => m.region === region),
@@ -39,13 +40,20 @@ export default function MissionsPage() {
   );
 
   const filtered = useMemo(() => {
+    let list = regionMissions;
+    if (categoryFilter) {
+      list = list.filter((m) =>
+        m.category === categoryFilter ||
+        (categoryFilter === "Embassy" && m.category === "Permanent Mission")
+      );
+    }
     const q = query.trim().toLowerCase();
     return !q
-      ? regionMissions
-      : regionMissions.filter((m) =>
+      ? list
+      : list.filter((m) =>
           (m.city + " " + m.country + " " + m.address).toLowerCase().includes(q)
         );
-  }, [regionMissions, query]);
+  }, [regionMissions, categoryFilter, query]);
 
   const regionCounts = useMemo(() => ({
     Embassy:          regionMissions.filter(m => m.category === "Embassy" || m.category === "Permanent Mission").length,
@@ -78,16 +86,38 @@ export default function MissionsPage() {
         </div>
       </div>
 
-      {/* Category legend */}
+      {/* Category legend — click to filter */}
       <div className="border-b border-line bg-white">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-6 px-4 py-3">
-          <span className="text-xs font-bold uppercase tracking-widest text-ink/40">Legend</span>
-          {(["Embassy", "High Commission", "Consulate"] as MissionCategory[]).map((c) => (
-            <span key={c} className="flex items-center gap-1.5">
-              <span className={`h-3 w-3 rounded-full ${categoryDot[c]}`} />
-              <span className={`text-sm ${categoryText[c]}`}>{c}</span>
-            </span>
-          ))}
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-4 py-3">
+          <span className="mr-2 text-xs font-bold uppercase tracking-widest text-ink/40">Filter</span>
+          {(["Embassy", "High Commission", "Consulate"] as const).map((c) => {
+            const active = categoryFilter === c;
+            return (
+              <button
+                key={c}
+                type="button"
+                onClick={() => { setCategoryFilter(active ? null : c); setQuery(""); }}
+                aria-pressed={active}
+                className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-semibold transition-all ${
+                  active
+                    ? `border-current bg-current/10 ${categoryText[c]}`
+                    : `border-line bg-white text-ink/60 hover:border-current/40 hover:${categoryText[c].split(" ")[0]}`
+                }`}
+              >
+                <span className={`h-2.5 w-2.5 rounded-full ${categoryDot[c]}`} />
+                {c}{c === "Embassy" ? " / Perm. Mission" : ""}
+              </button>
+            );
+          })}
+          {categoryFilter && (
+            <button
+              type="button"
+              onClick={() => setCategoryFilter(null)}
+              className="ml-1 text-xs font-semibold text-ink/50 underline hover:text-brand"
+            >
+              Clear filter
+            </button>
+          )}
         </div>
       </div>
 
@@ -102,7 +132,7 @@ export default function MissionsPage() {
                 <button
                   key={r}
                   type="button"
-                  onClick={() => { setRegion(r); setQuery(""); }}
+                  onClick={() => { setRegion(r); setQuery(""); setCategoryFilter(null); }}
                   aria-pressed={region === r}
                   className={`rounded-full border px-5 py-1.5 text-sm font-semibold transition-colors ${
                     region === r

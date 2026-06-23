@@ -39,7 +39,6 @@ export const site = {
 
   officeHours: [
     { days: "Monday – Friday", hours: "8:00 am – 4:00 pm" },
-    { days: "Consular desk", hours: "9:00 am – 1:00 pm" },
   ],
 
   url: "https://foreignaffairs.gov.ng",
