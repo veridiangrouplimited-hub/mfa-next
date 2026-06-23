@@ -1,17 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site, govLinks } from "@/lib/site";
-import WatermarkSeal from "@/components/WatermarkSeal";
-import EmbassySeal from "@/components/EmbassySeal";
 import Icon, { type IconName } from "@/components/Icon";
 import FlagStripe from "@/components/FlagStripe";
 
 const quickLinks = [
-  { label: "Visa Services", href: "/consular-services/visa-services" },
-  { label: "Passport Services", href: "/consular-services/passport-services" },
+  { label: "Visa & Passports", href: "/services/visa-passports" },
+  { label: "Document Authentication", href: "/services/document-authentication" },
+  { label: "Consular Assistance", href: "/services/consular-assistance" },
+  { label: "Travel Advisory", href: "/services/travel-advisory" },
   { label: "Public Notices", href: "/public-notices" },
-  { label: "News & Press Releases", href: "/news" },
-  { label: "Nigerians in Diaspora", href: "/diaspora" },
-  { label: "Book an Appointment", href: "/contact" },
+  { label: "News & Press Releases", href: "/press" },
 ];
 
 const legalLinks = [
@@ -26,11 +25,16 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-brand-dark text-white">
       <FlagStripe className="h-1.5" />
       <div className="h-px bg-gold/60" aria-hidden="true" />
-      <WatermarkSeal className="pointer-events-none absolute -bottom-24 -right-16 hidden h-96 w-96 text-white opacity-[0.11] lg:block" />
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="mb-5 flex items-center gap-4">
-            <EmbassySeal className="h-20 w-20 shrink-0" />
+            <Image
+              src="/images/mfa-logox.png"
+              alt="Nigeria Coat of Arms"
+              width={96}
+              height={96}
+              className="h-24 w-24 shrink-0 object-contain"
+            />
             <div className="border-l-2 border-gold/60 pl-3">
               <p className="font-serif text-base font-bold leading-snug">{site.missionName}</p>
               <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-white/65">
@@ -106,7 +110,7 @@ export default function Footer() {
         <div>
           <h2 className="mb-4 flex items-center gap-2 font-serif text-base font-bold">
             <span className="inline-block h-px w-6 bg-gold" aria-hidden="true" />
-            Connect With the Embassy
+            Connect With the Ministry
           </h2>
           <ul className="mb-7 flex gap-3">
             {site.social.map((s) => (

@@ -21,7 +21,7 @@ export default async function PublicNoticesPage() {
       <PageHeader
         title="Public Notices"
         lead="Official announcements, consular advisories, holiday notices and service updates. Filter by category or browse all notices below."
-        crumbs={[{ label: "Public Notices" }]}
+        crumbs={[{ label: "Press Center", href: "/news" }, { label: "Public Notices" }]}
       />
       <div className="mx-auto max-w-4xl px-4 py-16">
         <NoticesList notices={sorted} />

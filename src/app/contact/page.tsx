@@ -6,22 +6,15 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Address, phone numbers, email, office hours, emergency contacts and the enquiry form for the ${site.missionName}.`,
+  description: `Address, phone numbers, email, office hours and the enquiry form for the ${site.missionName}.`,
 };
-
-const departmentContacts = [
-  { name: "Consular Section (visas, passports, documents)", email: "consular.havana@foreignaffairs.gov.ng" },
-  { name: "Trade & Investment Section", email: "trade.havana@foreignaffairs.gov.ng" },
-  { name: "Information & Press", email: "press.havana@foreignaffairs.gov.ng" },
-  { name: "Education & Scholarships", email: "education.havana@foreignaffairs.gov.ng" },
-];
 
 export default function ContactPage() {
   return (
     <>
       <PageHeader
         title="Contact Us"
-        lead="Reach the Mission by phone, email or the enquiry form below. For emergencies involving a Nigerian citizen, call the 24-hour line at any time."
+        lead="Reach the Ministry by phone, email or the enquiry form below."
         crumbs={[{ label: "Contact Us" }]}
       />
       <div className="mx-auto max-w-7xl px-4 py-16">
@@ -101,37 +94,6 @@ export default function ContactPage() {
                 </a>
                 .
               </p>
-            </section>
-
-            <section aria-labelledby="emergency-heading" className="rounded border-l-4 border-red-700 bg-red-50 p-5">
-              <h2 id="emergency-heading" className="mb-2 flex items-center gap-2 font-serif text-lg font-bold text-red-800">
-                <Icon name="alert" className="h-5 w-5" />
-                Emergency Contact
-              </h2>
-              <p className="text-sm leading-relaxed">
-                For emergencies involving the safety or welfare of a Nigerian citizen, call:
-              </p>
-              <a href={`tel:${site.emergencyPhone}`} className="mt-2 block text-xl font-bold text-red-800 underline">
-                {site.emergencyPhone}
-              </a>
-              <p className="mt-1 text-xs text-ink/70">Available 24 hours. Not for routine enquiries.</p>
-            </section>
-
-            <section aria-labelledby="departments-heading">
-              <h2 id="departments-heading" className="mb-3 flex items-center gap-2 font-serif text-xl font-bold text-brand-deep">
-                <Icon name="users" className="h-5 w-5" />
-                Department Contacts
-              </h2>
-              <ul className="space-y-2.5 text-sm">
-                {departmentContacts.map((d) => (
-                  <li key={d.name} className="rounded border border-line bg-white p-3">
-                    <span className="block font-semibold">{d.name}</span>
-                    <a href={`mailto:${d.email}`} className="text-brand underline">
-                      {d.email}
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </section>
 
             <section aria-labelledby="social-heading" className="rounded border border-line bg-white p-5">

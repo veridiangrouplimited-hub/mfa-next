@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
-import NewsList from "@/components/NewsList";
 import { getNews } from "@/data/news";
 import { site } from "@/lib/site";
+import NewsClient from "./NewsClient";
 
 export const metadata: Metadata = {
-  title: "News & Press Releases",
-  description: `News, press releases, speeches, official statements and activities of the ${site.missionName}.`,
+  title: "News & Updates",
+  description: `Latest news, speeches, official statements and updates from the ${site.missionName}.`,
 };
 
 export default async function NewsPage() {
-  const news = await getNews();
+  const items = await getNews();
   return (
     <>
       <PageHeader
-        title="News & Press Releases"
-        lead="Official news, press releases, speeches, statements and activities of the Mission. Use the filters to find what you need."
-        crumbs={[{ label: "News & Press" }]}
+        title="News & Updates"
+        lead="The latest news, speeches and official updates from the Ministry of Foreign Affairs, Federal Republic of Nigeria."
+        crumbs={[{ label: "Press Center", href: "/press" }, { label: "News & Updates" }]}
       />
-      <div className="mx-auto max-w-7xl px-4 py-16">
-        <NewsList items={news} />
+      <div className="mx-auto max-w-7xl px-4 py-10 md:py-14">
+        <NewsClient items={items} />
       </div>
     </>
   );

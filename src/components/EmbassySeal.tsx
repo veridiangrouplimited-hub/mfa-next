@@ -30,35 +30,35 @@ export default function EmbassySeal({ className }: { className?: string }) {
         />
       </defs>
 
-      {/* Embassy name — top */}
+      {/* Ministry name — top */}
       <text
         fontFamily="serif"
-        fontSize="9"
+        fontSize="7.5"
         fontWeight="bold"
         fill="#c9a84c"
-        letterSpacing="2.2"
+        letterSpacing="1.4"
       >
         <textPath href="#top-arc" startOffset="50%" textAnchor="middle">
-          EMBASSY OF NIGERIA
+          MINISTRY OF FOREIGN AFFAIRS
         </textPath>
       </text>
 
       {/* Location — bottom */}
       <text
         fontFamily="serif"
-        fontSize="8"
+        fontSize="7.5"
         fontWeight="bold"
         fill="#c9a84c"
         letterSpacing="1.8"
       >
         <textPath href="#bottom-arc" startOffset="50%" textAnchor="middle">
-          HAVANA · CUBA
+          ABUJA · NIGERIA
         </textPath>
       </text>
 
       {/* Coat of arms / MFA logo */}
       <image
-        href="/images/mfa-logo.png"
+        href="/images/mfa-logox.png"
         x="30"
         y="28"
         width="80"

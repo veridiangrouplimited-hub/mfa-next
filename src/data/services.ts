@@ -30,297 +30,68 @@ export interface Service {
 // Static fallback — used when WORDPRESS_URL is not set or WP is unreachable.
 export const services: Service[] = [
   {
-    slug: "visa-services",
-    title: "Visa Services",
-    icon: "visa",
-    summary:
-      "Entry visas for foreign nationals travelling to Nigeria for business, tourism, official duty or temporary work.",
-    overview: [
-      "The Mission processes Nigerian entry visas for citizens and residents of Cuba. All visa applications begin online through the Nigeria Immigration Service portal, after which supporting documents are submitted to the Mission.",
-      "Applicants are advised to apply well in advance of their intended travel date and to ensure that all information supplied matches their travel documents exactly.",
-    ],
-    eligibility: [
-      "Citizens of Cuba holding a passport valid for at least six months.",
-      "Foreign nationals legally resident in Cuba (proof of residence required).",
-      "Holders of passports from countries covered by this Mission's consular jurisdiction.",
-    ],
-    requirements: [
-      "Passport valid for at least six months with at least two blank pages.",
-      "Completed online application form (Nigeria Immigration Service portal).",
-      "Evidence of online payment of the visa fee.",
-      "Two recent passport-size photographs on a white background.",
-      "Letter of invitation from a host in Nigeria, or hotel reservation.",
-      "Return or onward flight reservation.",
-      "Evidence of sufficient funds (recent bank statement).",
-      "For business visas: introduction letter from the applicant's company and acceptance of immigration responsibility by the Nigerian host company.",
-    ],
-    process: [
-      "Complete the visa application form on the Nigeria Immigration Service portal and pay the prescribed fee online.",
-      "Print the acknowledgement and payment receipts.",
-      "Book an appointment with the Mission's consular section.",
-      "Submit your passport and supporting documents in person on your appointment date.",
-      "Attend a short interview where required.",
-      "Collect your passport, or receive it by registered courier where that option is offered.",
-    ],
-    fees: [
-      { item: "Single-entry visa (short visit)", amount: "US$160" },
-      { item: "Multiple-entry visa", amount: "US$250" },
-      { item: "Temporary work permit cable", amount: "US$400" },
-    ],
-    feesNote:
-      "Visa fees are set by the Nigeria Immigration Service, vary by nationality on the basis of reciprocity, and are paid online. Fees are not payable in cash at the Mission and are non-refundable.",
-    processingTime: [
-      "Standard applications: 5–10 working days from submission of complete documents.",
-      "Applications requiring referral to Abuja may take longer; applicants are notified where this applies.",
-    ],
-    faqs: [
-      {
-        q: "Can I pay the visa fee at the Mission?",
-        a: "No. All visa fees are paid online through the Nigeria Immigration Service portal before submission. The Mission does not accept cash payments for visas.",
-      },
-      {
-        q: "Do I need an appointment to submit my application?",
-        a: "Yes. Applications are received by appointment to reduce waiting times. Use the Book Appointment option or contact the consular section.",
-      },
-      {
-        q: "My travel is urgent. Can processing be expedited?",
-        a: "Genuinely urgent cases — medical emergencies or official government travel — may be considered on presentation of evidence. Contact the consular section before submitting.",
-      },
-      {
-        q: "Is a visa on arrival available?",
-        a: "Visa on arrival is available to certain categories of travellers with prior approval from the Nigeria Immigration Service. See the NIS portal for current eligibility.",
-      },
-    ],
-    forms: [
-      { label: "Visa application checklist (PDF)", href: "#" },
-      { label: "Letter of invitation template (PDF)", href: "#" },
-    ],
-    externalLinks: [
-      { label: "Nigeria Immigration Service — Visa portal", href: "https://immigration.gov.ng" },
-      { label: "Online visa application", href: "https://portal.immigration.gov.ng" },
-    ],
-  },
-  {
-    slug: "passport-services",
-    title: "Passport Services",
-    icon: "passport",
-    summary:
-      "Fresh applications, renewals and reissues of the Nigerian e-passport for citizens in Cuba.",
-    overview: [
-      "The Mission processes applications for the Nigerian enhanced e-passport on behalf of the Nigeria Immigration Service. All applications begin online, followed by an in-person appointment for biometric capture.",
-      "Passports are produced centrally; applicants should not plan travel around an expected collection date until the Mission confirms the passport is ready.",
-    ],
-    eligibility: [
-      "Nigerian citizens resident in or visiting Cuba.",
-      "Children of Nigerian parents (both parents' consent required for minors).",
-      "Applicants whose passports are lost, damaged, expired or fully stamped.",
-    ],
-    requirements: [
-      "Completed online application on the NIS e-passport portal with payment receipt.",
-      "Current or expired Nigerian passport (data page copy for renewals).",
-      "National Identification Number (NIN).",
-      "Proof of residence in Cuba, where applicable.",
-      "For first-time adult applicants: birth certificate and evidence of Nigerian citizenship.",
-      "For minors: birth certificate, parents' data pages and a signed letter of consent from both parents.",
-      "For lost passports: police report and a sworn affidavit.",
-    ],
-    process: [
-      "Apply and pay on the Nigeria Immigration Service e-passport portal.",
-      "Book a biometric capture appointment at the Mission.",
-      "Attend in person with your documents for biometric enrolment.",
-      "Track your application status using the reference number issued at capture.",
-      "Collect your new passport in person, or by registered courier where offered.",
-    ],
-    fees: [
-      { item: "32-page e-passport (5-year validity)", amount: "US$106" },
-      { item: "64-page e-passport (10-year validity)", amount: "US$130" },
-    ],
-    feesNote:
-      "Passport fees are set by the Nigeria Immigration Service and paid online in the currency stated on the portal. Courier return, where chosen, is charged separately.",
-    processingTime: [
-      "Standard processing: 6–12 weeks from biometric capture, subject to central production.",
-      "Applicants are contacted by email or SMS when passports are ready for collection.",
-    ],
-    faqs: [
-      {
-        q: "My passport expires soon. When should I renew?",
-        a: "Apply at least six months before expiry. Many airlines and host-country authorities require six months' validity for travel.",
-      },
-      {
-        q: "Can someone collect my passport on my behalf?",
-        a: "Yes, with a signed letter of authority, a copy of your identification and the collection slip. Minors' passports are released only to a parent or legal guardian.",
-      },
-      {
-        q: "I have no NIN. Can I still apply?",
-        a: "The NIN is mandatory for all passport applications. The Mission offers NIN enrolment support — contact the consular section for available dates.",
-      },
-    ],
-    forms: [
-      { label: "Passport application checklist (PDF)", href: "#" },
-      { label: "Letter of consent for minors (PDF)", href: "#" },
-    ],
-    externalLinks: [
-      { label: "NIS e-passport portal", href: "https://passport.immigration.gov.ng" },
-      { label: "NIMC — National Identification Number", href: "https://nimc.gov.ng" },
-    ],
-  },
-  {
-    slug: "emergency-travel-certificate",
-    title: "Emergency Travel Certificate",
-    icon: "plane",
-    summary:
-      "A one-way travel document enabling Nigerian citizens without a valid passport to return to Nigeria.",
-    overview: [
-      "The Emergency Travel Certificate (ETC) is issued to Nigerian citizens who must travel to Nigeria urgently but do not hold a valid passport — for example where a passport has been lost, stolen or has expired and there is no time to obtain a replacement.",
-      "The ETC is valid for a single journey to Nigeria only. It is not a substitute for a passport and cannot be used to travel to any other destination.",
-    ],
-    eligibility: [
-      "Nigerian citizens in Cuba whose passport is lost, stolen, damaged or expired.",
-      "Nigerians being repatriated or deported, in coordination with host-country authorities.",
-      "Applicants able to establish Nigerian citizenship to the satisfaction of the Mission.",
-    ],
-    requirements: [
-      "Completed ETC application form (available at the Mission or downloadable below).",
-      "Evidence of Nigerian citizenship — expired passport, NIN, birth certificate or sworn declaration.",
-      "Police report, where the passport was lost or stolen.",
-      "Two passport-size photographs on a white background.",
-      "Confirmed one-way travel itinerary to Nigeria.",
-    ],
-    process: [
-      "Contact the consular section or attend the Mission with your documents.",
-      "Complete the application form and a short citizenship interview.",
-      "Pay the prescribed fee, where applicable.",
-      "Collect the certificate — same-day issuance is possible in genuine emergencies.",
-    ],
-    fees: [{ item: "Emergency Travel Certificate", amount: "US$30" }],
-    feesNote:
-      "The fee may be waived in destitution or repatriation cases at the discretion of the Head of Mission.",
-    processingTime: [
-      "Same day to 2 working days, once citizenship is established and documents are complete.",
-    ],
-    faqs: [
-      {
-        q: "Can I use the ETC to return to Cuba?",
-        a: "No. The ETC is valid for one journey to Nigeria only. You will need a new passport — and any required host-country visa — before travelling again.",
-      },
-      {
-        q: "I have no documents at all. What should I do?",
-        a: "Attend the Mission in person. Citizenship can be established through interview and verification with authorities in Nigeria; allow additional time for this.",
-      },
-    ],
-    forms: [{ label: "ETC application form (PDF)", href: "#" }],
-    externalLinks: [
-      { label: "Nigeria Immigration Service", href: "https://immigration.gov.ng" },
-    ],
-  },
-  {
     slug: "document-authentication",
     title: "Document Authentication",
     icon: "seal",
     summary:
-      "Legalisation and authentication of Nigerian documents for use in Cuba, and host-country documents for use in Nigeria.",
+      "Apostille, notarisation and legalisation of Nigerian public documents for use abroad — and foreign documents for use in Nigeria.",
     overview: [
-      "The Mission authenticates official documents so they can be recognised by authorities in Nigeria or in Cuba. Typical documents include birth, marriage and academic certificates, police character certificates, powers of attorney and commercial documents.",
-      "Documents originating from Nigeria must first be legalised by the Ministry of Foreign Affairs in Abuja before the Mission can authenticate them.",
+      "The Ministry authenticates official documents so they can be recognised by authorities in Nigeria or abroad. Nigeria is a signatory to the Hague Apostille Convention (1961).",
+      "Documents intended for use in another Hague member country can be given an Apostille certificate by the Federal Ministry of Justice in Abuja. For non-Hague countries, full consular legalisation at the relevant embassy is required.",
     ],
     eligibility: [
-      "Holders of Nigerian public documents intended for official use in Cuba.",
-      "Holders of Cuba documents intended for official use in Nigeria, after legalisation by the host-country foreign ministry.",
+      "Holders of Nigerian public documents intended for official use abroad.",
+      "Holders of foreign documents intended for official use in Nigeria.",
       "Companies requiring authentication of commercial and trade documents.",
     ],
     requirements: [
-      "Original document, plus one photocopy of each document.",
+      "Original document, plus one photocopy.",
       "Prior legalisation by the issuing country's foreign ministry, as applicable.",
-      "Valid identification of the applicant (passport or national ID).",
+      "Valid identification of the applicant.",
       "Completed authentication request form.",
       "Evidence of payment of the prescribed fee.",
     ],
     process: [
       "Confirm that the document carries the required prior legalisation.",
       "Complete the authentication request form and pay the prescribed fee.",
-      "Submit the original document and copies at the consular section, in person or through an authorised representative.",
+      "Submit the original document and copies at the nearest mission's consular section.",
       "Collect the authenticated document on the date indicated on your submission slip.",
     ],
     fees: [
       { item: "Authentication, per document (personal)", amount: "US$40" },
       { item: "Authentication, per document (commercial)", amount: "US$80" },
+      { item: "Apostille certificate", amount: "Per Federal Ministry of Justice schedule" },
     ],
     feesNote: "Fees are payable per document and are non-refundable once processing begins.",
     processingTime: ["3–5 working days from submission of complete documents."],
     faqs: [
       {
-        q: "Does the Mission verify the content of documents?",
-        a: "Authentication confirms the authenticity of the signature and seal of the legalising authority. It does not certify the truth of a document's contents.",
+        q: "What is the difference between apostille and legalisation?",
+        a: "An apostille is a simplified form of authentication used between Hague Convention countries. Full legalisation is required for countries outside the Hague Convention.",
       },
       {
-        q: "Can I post my documents to the Mission?",
-        a: "Postal submission is accepted with a prepaid, self-addressed return envelope from a registered courier. The Mission is not liable for documents lost in transit.",
+        q: "Does the Ministry verify the content of documents?",
+        a: "Authentication confirms the authenticity of the signature and seal of the issuing authority. It does not certify the truth of a document's contents.",
       },
     ],
     forms: [{ label: "Authentication request form (PDF)", href: "#" }],
     externalLinks: [
-      { label: "Ministry of Foreign Affairs, Abuja", href: "https://foreignaffairs.gov.ng" },
+      { label: "Federal Ministry of Justice — Apostille", href: "https://justice.gov.ng" },
     ],
-  },
-  {
-    slug: "notarial-services",
-    title: "Notarial Services",
-    icon: "scale",
-    summary:
-      "Attestation of affidavits, declarations, powers of attorney and certified true copies for Nigerian citizens.",
-    overview: [
-      "Consular officers perform limited notarial functions for Nigerian citizens in Cuba, including witnessing signatures, administering oaths and certifying copies of Nigerian documents.",
-      "Documents must be signed in the presence of the consular officer. Do not sign documents in advance.",
-    ],
-    eligibility: [
-      "Nigerian citizens resident in or visiting Cuba.",
-      "In limited cases, foreign nationals where the document is for use in Nigeria.",
-    ],
-    requirements: [
-      "The unsigned document to be notarised, complete and ready for signature.",
-      "Valid identification — Nigerian passport or national ID.",
-      "Names and identification details of any witnesses, where the document requires them.",
-      "Evidence of payment of the prescribed fee.",
-    ],
-    process: [
-      "Book an appointment with the consular section.",
-      "Attend in person with your identification and the unsigned document.",
-      "Sign the document before the consular officer, who attests and seals it.",
-      "Collect the notarised document — usually the same day.",
-    ],
-    fees: [
-      { item: "Attestation of signature / oath", amount: "US$30" },
-      { item: "Certified true copy, per document", amount: "US$20" },
-      { item: "Power of attorney", amount: "US$50" },
-    ],
-    feesNote: "Fees are payable per notarial act as set out in the official fee schedule.",
-    processingTime: ["Same day, by appointment."],
-    faqs: [
-      {
-        q: "Can the Mission prepare the legal document for me?",
-        a: "No. Consular officers witness and attest documents but do not provide legal drafting or legal advice. Have your document prepared by a legal practitioner beforehand.",
-      },
-      {
-        q: "My power of attorney is for use in Nigeria. Is consular attestation enough?",
-        a: "Consular attestation is widely accepted, but confirm any further registration requirements (for example with a State land registry) with your solicitor in Nigeria.",
-      },
-    ],
-    forms: [{ label: "Notarial service request form (PDF)", href: "#" }],
-    externalLinks: [],
   },
   {
     slug: "consular-assistance",
     title: "Consular Assistance",
     icon: "shield",
     summary:
-      "Support for Nigerians in distress — arrest, hospitalisation, bereavement, destitution and crisis situations.",
+      "Emergency support for Nigerians in distress abroad — arrest, hospitalisation, bereavement, lost documents and repatriation.",
     overview: [
-      "The Mission provides consular protection and welfare assistance to Nigerian citizens in Cuba. Officers can visit detained citizens, liaise with local authorities, help contact family in Nigeria and provide guidance in emergencies.",
-      "The Mission cannot interfere in the judicial processes of Cuba, pay legal or medical bills, or secure preferential treatment — but it will work to ensure that Nigerians are treated fairly and with dignity.",
+      "The Ministry of Foreign Affairs provides consular protection and welfare assistance to Nigerian citizens worldwide through its network of embassies, high commissions and consulates.",
+      "Consular officers can visit detained citizens, liaise with local authorities, help contact family in Nigeria, issue Emergency Travel Certificates and provide guidance in emergencies.",
     ],
     eligibility: [
-      "All Nigerian citizens in Cuba, whether resident or visiting.",
-      "Family members in Nigeria seeking welfare confirmation of a relative in Cuba.",
+      "All Nigerian citizens abroad, whether resident or visiting.",
+      "Family members in Nigeria seeking welfare confirmation of a relative abroad.",
     ],
     requirements: [
       "Any available identification of the affected citizen.",
@@ -328,10 +99,10 @@ export const services: Service[] = [
       "Contact details of next of kin, where relevant.",
     ],
     process: [
-      "Contact the Mission by phone or email — use the 24-hour emergency line for urgent cases.",
+      "Contact the nearest Nigerian mission by phone or email — use the 24-hour emergency line for urgent cases.",
       "Provide the citizen's details and the nature of the emergency.",
       "A consular officer is assigned and advises on the next steps.",
-      "The Mission liaises with local authorities and family as appropriate, and follows the case to conclusion.",
+      "The mission liaises with local authorities and family as appropriate.",
     ],
     fees: [{ item: "Consular welfare assistance", amount: "Free of charge" }],
     feesNote:
@@ -339,21 +110,93 @@ export const services: Service[] = [
     processingTime: ["Emergency cases are attended to immediately, 24 hours a day."],
     faqs: [
       {
-        q: "A relative has been arrested. What can the Mission do?",
-        a: "With the citizen's consent, consular officers can visit them in detention, monitor their welfare and treatment, provide a list of local lawyers and keep family informed. The Mission cannot secure release from lawful custody.",
+        q: "A relative has been arrested abroad. What can the Mission do?",
+        a: "With the citizen's consent, consular officers can visit them in detention, monitor their welfare, provide a list of local lawyers and keep family informed. The Mission cannot secure release from lawful custody.",
       },
       {
-        q: "A Nigerian has died in Cuba. Who do we contact?",
-        a: "Contact the consular section immediately. The Mission will guide the family through documentation for local burial or repatriation of remains, and liaise with host-country authorities.",
-      },
-      {
-        q: "I have lost everything — money and documents. Can the Mission help?",
-        a: "Attend the Mission or call the emergency line. Officers can help you contact family for funds, issue an Emergency Travel Certificate and connect you with local support services.",
+        q: "A Nigerian has died abroad. Who do we contact?",
+        a: "Contact the nearest Nigerian mission immediately. The mission will guide the family through documentation for local burial or repatriation of remains.",
       },
     ],
     forms: [],
     externalLinks: [
       { label: "NiDCOM — Nigerians in Diaspora Commission", href: "https://nidcom.gov.ng" },
+    ],
+  },
+  {
+    slug: "diaspora",
+    title: "Diaspora Engagement",
+    icon: "users",
+    summary:
+      "Services for Nigerians living and working abroad — community registration, dual citizenship, diaspora investment and welfare.",
+    overview: [
+      "The Ministry of Foreign Affairs treats over 17 million Nigerians living abroad as a strategic national asset — the fifth geopolitical zone of Nigeria — under the 4D Foreign Policy Doctrine.",
+      "Through its global network of missions, the Ministry offers a range of services to keep Nigerians connected to their homeland and empowered as ambassadors for national development.",
+    ],
+    eligibility: [
+      "Nigerian citizens living or working abroad.",
+      "Nigerians who have naturalised abroad and wish to retain Nigerian citizenship.",
+      "Nigerian diaspora organisations and community groups.",
+    ],
+    requirements: [
+      "Valid Nigerian passport or proof of Nigerian citizenship.",
+      "Proof of residence in the country of registration.",
+      "For dual citizenship applications: naturalisation certificate of the second country.",
+    ],
+    process: [
+      "Register with the nearest Nigerian mission to access diaspora services.",
+      "For dual citizenship: submit a formal application with the required documents.",
+      "For investment enquiries: contact the mission's trade and investment section.",
+    ],
+    fees: [
+      { item: "Community registration", amount: "Free" },
+      { item: "Dual citizenship guidance", amount: "Per mission schedule" },
+    ],
+    feesNote: "Most diaspora engagement services are provided free of charge.",
+    processingTime: ["Registration: same day. Dual citizenship processing: varies."],
+    faqs: [
+      {
+        q: "Can I retain my Nigerian citizenship if I naturalise abroad?",
+        a: "Section 28 of the Nigerian Constitution allows Nigerian citizens to retain their citizenship upon naturalisation in certain countries. Contact the nearest mission for guidance.",
+      },
+    ],
+    forms: [{ label: "Community registration form (PDF)", href: "#" }],
+    externalLinks: [
+      { label: "NiDCOM — Nigerians in Diaspora Commission", href: "https://nidcom.gov.ng" },
+    ],
+  },
+  {
+    slug: "travel-advisory",
+    title: "Travel Advisory",
+    icon: "plane",
+    summary:
+      "Official safety and travel advisories for Nigerian citizens travelling abroad, updated regularly by the Ministry.",
+    overview: [
+      "The Ministry of Foreign Affairs issues travel advisories to inform Nigerian citizens of safety and security conditions in countries worldwide.",
+      "Advisories are classified on a four-level scale: Normal (Level 1), Caution (Level 2), Reconsider (Level 3), and Do Not Travel (Level 4).",
+    ],
+    eligibility: [
+      "All Nigerian citizens planning or currently travelling abroad.",
+      "Nigerian businesses with operations or staff abroad.",
+    ],
+    requirements: [],
+    process: [
+      "Check the Ministry's travel advisory page before planning travel.",
+      "Register with the nearest Nigerian mission when in-country.",
+      "Monitor updates during your stay and follow the advice of the mission and local authorities.",
+    ],
+    fees: [{ item: "Travel advisories", amount: "Free — publicly available" }],
+    feesNote: "",
+    processingTime: ["Advisories are updated as security situations evolve."],
+    faqs: [
+      {
+        q: "Where can I find the latest advisories?",
+        a: "Advisories are published on the Ministry's official website at foreignaffairs.gov.ng and through the nearest Nigerian mission.",
+      },
+    ],
+    forms: [],
+    externalLinks: [
+      { label: "Ministry of Foreign Affairs", href: "https://foreignaffairs.gov.ng" },
     ],
   },
 ];

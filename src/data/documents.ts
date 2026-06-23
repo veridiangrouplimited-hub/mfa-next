@@ -66,7 +66,7 @@ export const documents: ConsularDocument[] = [
     id: "document-auth-form",
     title: "Document Authentication / Legalisation Request",
     description:
-      "Request form for authentication of Nigerian-issued documents for use in Cuba.",
+      "Request form for authentication of Nigerian-issued documents for official use abroad.",
     category: "authentication",
     filename: "document-authentication-form.pdf",
     sizeKb: 64,
@@ -76,7 +76,7 @@ export const documents: ConsularDocument[] = [
     id: "citizen-registration-form",
     title: "Nigerian Citizen Registration Form",
     description:
-      "Form for Nigerians resident in Cuba to register with the Mission for consular assistance.",
+      "Form for Nigerian citizens abroad to register with the nearest Nigerian mission for consular assistance.",
     category: "general",
     filename: "citizen-registration-form.pdf",
     sizeKb: 52,

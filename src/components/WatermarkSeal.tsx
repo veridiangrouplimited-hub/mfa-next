@@ -27,7 +27,7 @@ export default function WatermarkSeal({ className }: { className?: string }) {
         </filter>
       </defs>
       <image
-        href="/images/mfa-logo.png"
+        href="/images/mfa-logox.png"
         x="5"
         y="5"
         width="190"
